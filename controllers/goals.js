@@ -1,7 +1,9 @@
 import { Goal } from "../models/goal.js"
 
 function newGoal(req,res){
-  console.log('its working')
+  res.render('goals/new', {
+    title: "New Goal"
+  })
 }
 
 export{

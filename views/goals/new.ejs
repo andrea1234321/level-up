@@ -1,0 +1,31 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+
+<main>
+  <h1> <%= title %></h1>
+  <div class="new-goal-container">
+    <label>Category: 
+      <select name="category" id="">
+        <option>Career</option>
+        <option>Health</option>
+        <option>Finance</option>
+        <option>Relationships</option>
+        <option>Spiritual</option>
+        <option>Other</option>
+      </select>
+    </label>
+    <label>Title: 
+      <input type="text" name="title" autocomplete="off">
+    </label>
+    <label>Deadline: 
+      <input type="text" name="deadline" autocomplete="off">
+    </label>
+    <label>Goal: 
+      <input type="text" name="content" autocomplete="off">
+    </label>
+    <button>Create Goal</button>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
