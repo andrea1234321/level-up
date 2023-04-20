@@ -4,26 +4,25 @@
 </head>
 <body>
   <nav>
-    <% if (user) { %>
-      <a href="/auth/logout" class="right">
-        <button type="submit">Logout</button>
-      </a>
-    <% } else { %>
-      <div 
-        id="g_id_onload"
-        data-client_id="<%= googleClientID %>"
-        data-login_uri="/auth/google"
-        data-auto_prompt="false"
-        data-prompt_parent_id="g_id_onload"
-      ></div>
-      <div 
-        class="g_id_signin right"
-        data-type="standard"
-        data-size="large"
-        data-theme="outline"
-        data-text="sign_in_with"
-        data-shape="rectangular"
-        data-logo_alignment="left"
-      ></div>
-    <% } %>
+    <div class="nav-links">
+      <% if (user) { %>
+        <a href="/goals">Goals</a>
+        <a href="/journal">Journal</a>
+      <% } %>
+    </div>
+    <div class="google">
+      <% if (user?.profile.avatar) { %>
+        <div class="profile-avatar">
+          <img
+            src="<%= user.profile.avatar %>"
+            alt="<%= user.profile.name %> avatar"
+          />
+        </div>
+      <% } %>
+      <% if (user) { %>
+        <a href="/auth/logout" class="right">
+          <button type="submit">Logout</button>
+        </a>
+      <% } %>
+    </div>
   </nav>

@@ -2,14 +2,39 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
+  <% if (!user) { %>
+    <h1>Welcome to LevelUp</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita labore, facere fugit dignissimos explicabo maxime eos! Reprehenderit officia corporis accusamus expedita, voluptates iste unde iure quae excepturi sit sequi qui.</p>
+    <div class="img-container">
+      <img src="" alt="">img1
+      <img src="" alt="">img2
     </div>
+    <h3>Sign in to start tracking your goals!</h3>
+    <div 
+      id="g_id_onload"
+      data-client_id="<%= googleClientID %>"
+      data-login_uri="/auth/google"
+      data-auto_prompt="false"
+      data-prompt_parent_id="g_id_onload"
+    ></div>
+    <div 
+      class="g_id_signin center"
+      data-type="standard"
+      data-size="medium"
+      data-theme="outline"
+      data-text="sign_in_with"
+      data-shape="pill"
+      data-logo_alignment="left"
+    ></div>
+  <% } %>
+  <% if (user) {%>
+    <h1>Create a SMART goal</h1>
+    <h3>Specific</h3>
+    <h3>Measurable</h3>
+    <h3>Attainable</h3>
+    <h3>Realistic</h3>
+    <h3>Time-bound</h3>
+    <button class="create-goal-btn">Create a New Goal</button>
   <% } %>
 </main>
 

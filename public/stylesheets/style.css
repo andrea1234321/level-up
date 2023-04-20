@@ -21,7 +21,7 @@ body {
 }
 
 nav {
-  background-color: #f6f6f6;
+  background-color: #ffffff;
   color: #1a1a1a;
   display: flex;
   align-items: center;
@@ -29,13 +29,31 @@ nav {
   min-height: 60px;
 }
 
-main {
+.google{
   display: flex;
   align-items: center;
-  justify-content: center;
+  margin-left: auto;
+}
+
+.profile-avatar{
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
+main {
+  display: flex;
+  text-align: center;
+  align-items: center;
   flex-direction: column;
 }
 
-.right {
-  margin-left: auto;
+.img-container{
+  display: flex;
+  justify-content: center;
+}
+
+.create-goal-btn{
+  width: 150px;
+  margin: 0 auto;
+  margin-bottom: 300px;
 }
