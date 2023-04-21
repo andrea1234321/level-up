@@ -12,10 +12,16 @@
     <a href="/goals/<%= goal._id %>/edit">
       <button>Edit Goal</button>
     </a>
-    <button>Check-In</button>
+    <a href="/goals/<%= goal._id %>/checkIn/new">
+      <button>Check-In</button>
+    </a>
   </div>
+  <h2>Check-In</h2>
+  <% goal.checkIns.forEach(checkIn => { %>
+    <p>Date: <%= checkIn.date %></p>
+    <p><%= checkIn.notes %></p>
+  <% }) %>
 </main>
-
 
 
 <%- include('../partials/footer') %>

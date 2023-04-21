@@ -1,0 +1,22 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <div class="category-container">
+    <h2><%= goal.category %> goal: <%= goal.title %></h2>
+  </div>
+  <p>Deadline is on <%= goal.deadline %></p>
+  <p>You have X months until your deadline, keep it up, you've got this!</p>
+  <p>Todays Date: </p>
+  <form action="/goals/<%= goal._id %>" method="POST">
+    <input type="date" name="date">
+    <input type="text" name="notes">
+    <div class="btns">
+      <button>Submit check-In</button>
+    </div>
+  </form>
+</main>
+
+
+<%- include('../partials/footer') %>

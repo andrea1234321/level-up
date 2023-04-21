@@ -22,7 +22,9 @@
         </a>
         </td>
         <td>
-          <button>Check-In</button>
+          <a href="/goals/<%= goal._id %>/checkIn/new">
+            <button>Check-In</button>
+          </a>
         </td>
         <td>
           <form action="/goals/<%= goal._id %>/?_method=DELETE" method="POST">

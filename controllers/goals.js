@@ -73,6 +73,39 @@ function update(req,res){
   })
 }
 
+function newCheckIn(req,res){
+  Goal.findById(req.params.goalId)
+  .then(goal=> {
+    res.render('goals/check-in', {
+      title: 'Check-In',
+      goal: goal
+    })
+  })
+  .catch(err=> {
+    console.log(err)
+    res.redirect('/goals')
+  }) 
+}
+
+function createCheckIn(req,res){
+  Goal.findById(req.params.goalId)
+  .then(goal=> {
+    goal.checkIns.push(req.body)
+    goal.save()
+    .then(()=> {
+      res.redirect(`/goals/${goal._id}`)
+    })
+    .catch(err=> {
+      console.log(err)
+      res.redirect('/goals')
+    }) 
+  })
+  .catch(err=> {
+    console.log(err)
+    res.redirect('/goals')
+  }) 
+}
+
 export{
   index,
   newGoal as new,
@@ -80,5 +113,7 @@ export{
   deleteGoal as delete,
   show,
   edit,
-  update
+  update,
+  newCheckIn,
+  createCheckIn
 }
