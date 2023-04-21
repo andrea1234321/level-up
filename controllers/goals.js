@@ -79,12 +79,13 @@ function update(req,res){
 }
 
 function newCheckIn(req,res){
-  console.log(todaysDate)
+  const todaysDate= new Date().toISOString().slice(0, 10)
   Goal.findById(req.params.goalId)
   .then(goal=> {
     res.render('goals/check-in', {
       title: 'Check-In',
       goal: goal,
+      todaysDate
     })
   })
   .catch(err=> {
