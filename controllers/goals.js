@@ -32,8 +32,20 @@ function create(req,res){
   })
 }
 
+function deleteGoal(req,res){
+  Goal.findByIdAndDelete(req.params.goalId)
+  .then(()=> {
+    res.redirect('/goals')
+  })
+  .catch(err=> {
+    console.log(err)
+    res.redirect('/')
+  }) 
+}
+
 export{
   index,
   newGoal as new,
-  create
+  create,
+  deleteGoal as delete
 }
