@@ -8,8 +8,12 @@
   <h1><%= title %></h1>
   <p>Deadline is on <%= goal.deadline %></p>
   <p><%= goal.content %></p>
-  <button>Edit Goal</button>
-  <button>Check-In</button>
+  <div class="btns">
+    <a href="/goals/<%= goal._id %>/edit">
+      <button>Edit Goal</button>
+    </a>
+    <button>Check-In</button>
+  </div>
 </main>
 
 

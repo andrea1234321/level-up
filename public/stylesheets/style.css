@@ -66,3 +66,7 @@ main {
   display: flex;
   text-align: left;
 }
+
+.btns{
+  display: flex;
+}

@@ -1,0 +1,31 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <form action="/goals/<%= goal._id %>?_method=PUT" method="POST">
+    <div class="category-container">
+      <label>Category: 
+        <select name="category" value="<%= goal.category %>">
+          <option>Career</option>
+          <option>Health</option>
+          <option>Finance</option>
+          <option>Relationships</option>
+          <option>Spiritual</option>
+          <option>Other</option>
+        </select>
+      </label>
+    </div>
+    <h1>
+      <input type="text" name="title" autocomplete="off" value="<%= title %>">
+    </h1>
+    <p>Deadline is on <input type="date" name="deadline" autocomplete="off" value="<%= goal.deadline %>"></p>
+    <p><input type="text" name="content" autocomplete="off" value="<%= goal.content %>"></p>
+    <div class="btns">
+        <button>Update</button>
+      </div>
+  </form>
+</main>
+
+
+
+<%- include('../partials/footer') %>

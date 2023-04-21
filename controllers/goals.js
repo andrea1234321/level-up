@@ -57,10 +57,33 @@ function show(req,res){
   }) 
 }
 
+function edit(req,res){
+  Goal.findById(req.params.goalId)
+  .then(goal=> {
+    res.render('goals/edit', {
+      title: goal.title,
+      goal: goal
+    })
+  })
+  .catch(err=> {
+    console.log(err)
+    res.redirect('/goals')
+  }) 
+}
+
+function update(req,res){
+  Goal.findByIdAndUpdate(req.params.goalId, req.body, {new: true})
+  .then(goal=> {
+    res.redirect(`/goals/${goal._id}`)
+  })
+}
+
 export{
   index,
   newGoal as new,
   create,
   deleteGoal as delete,
-  show
+  show,
+  edit,
+  update
 }
