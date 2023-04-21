@@ -3,9 +3,11 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const goalSchema = new Schema({
-  category: {type: String, enum: ['career', 'health', 'finance', 'relationships', 'spiritual', 'other']},
+  category: {type: String, enum: ['Career', 'Health', 'Finance', 'Relationships', 'Spiritual', 'Other']},
   title: String,
-  deadline: Date,
+  deadline: {type: Date, function(){
+    return new Date()
+  }},
   content: String,
   // completed: Boolean,
   // checkIn: [weeklyCheckIn],
