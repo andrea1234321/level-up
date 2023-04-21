@@ -3,23 +3,26 @@
 <main>
   <h1><%= title %></h1>
   <table>
-    <tr>
-      <th>Category</th>
-      <th>Title</th>
-      <th>Deadline</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-    <% goals.forEach(goal => { %>
-     <tr>
-       <td><%= goal.category %></td>
-       <td><%= goal.title %></td>
-       <td><%= goal.deadline.toISOString().slice(5, 10)%>-<%= goal.deadline.toISOString().slice(0, 4)%></td>
-       <td>
-        <a href="/goals/<%= goal._id %>">
-          <button>Details</button>
-        </a>
+    <thead>
+      <tr class="row-header">
+        <th>Category</th>
+        <th>Title</th>
+        <th>Deadline</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% goals.forEach(goal => { %>
+       <tr>
+         <td><%= goal.category %></td>
+         <td><%= goal.title %></td>
+         <td><%= goal.deadline.toISOString().slice(5, 10)%>-<%= goal.deadline.toISOString().slice(0, 4)%></td>
+         <td>
+          <a href="/goals/<%= goal._id %>">
+            <button>Details</button>
+          </a>
         </td>
         <td>
           <a href="/goals/<%= goal._id %>/checkIn/new">
@@ -31,8 +34,9 @@
             <button>X</button>
           </form>
         </td>
-     </tr>
-    <% }) %>
+       </tr>
+      <% }) %>
+    </tbody>
   </table>
   <a href="/goals/new">
     <button>Create new goal</button>
