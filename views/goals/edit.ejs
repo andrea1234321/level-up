@@ -18,7 +18,7 @@
     <h1>
       <input type="text" name="title" autocomplete="off" value="<%= title %>">
     </h1>
-    <p>Deadline is on <input type="date" name="deadline" autocomplete="off" value="<%= goal.deadline %>"></p>
+    <p>Deadline is on <input type="date" name="deadline" autocomplete="off" value="<%= goal.deadline.toISOString().slice(0, 10) %>"></p>
     <p><input type="text" name="content" autocomplete="off" value="<%= goal.content %>"></p>
     <div class="btns">
         <button>Update</button>

@@ -11,8 +11,10 @@ function index(req,res){
 }
 
 function newGoal(req,res){
+  const todaysDate= new Date().toISOString().slice(0, 10)
   res.render('goals/new', {
-    title: "New Goal"
+    title: "New Goal",
+    todaysDate
   })
 }
 
@@ -41,6 +43,7 @@ function deleteGoal(req,res){
 function show(req,res){
   Goal.findById(req.params.goalId)
   .then(goal=> {
+    console.log(goal)
     res.render('goals/show', {
       title: goal.title,
       goal: goal
@@ -53,11 +56,13 @@ function show(req,res){
 }
 
 function edit(req,res){
+  const todaysDate= new Date().toISOString().slice(0, 10)
   Goal.findById(req.params.goalId)
   .then(goal=> {
     res.render('goals/edit', {
       title: goal.title,
-      goal: goal
+      goal: goal,
+      todaysDate
     })
   })
   .catch(err=> {
@@ -74,11 +79,12 @@ function update(req,res){
 }
 
 function newCheckIn(req,res){
+  console.log(todaysDate)
   Goal.findById(req.params.goalId)
   .then(goal=> {
     res.render('goals/check-in', {
       title: 'Check-In',
-      goal: goal
+      goal: goal,
     })
   })
   .catch(err=> {

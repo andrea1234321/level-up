@@ -10,7 +10,7 @@
   <p>You have X months until your deadline, keep it up, you've got this!</p>
   <p>Todays Date: </p>
   <form action="/goals/<%= goal._id %>" method="POST">
-    <input type="date" name="date">
+    <input type="date" name="date" value="<%= todaysDate %>" required>
     <input type="text" name="notes">
     <div class="btns">
       <button>Submit check-In</button>

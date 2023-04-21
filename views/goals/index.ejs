@@ -15,7 +15,7 @@
      <tr>
        <td><%= goal.category %></td>
        <td><%= goal.title %></td>
-       <td><%= goal.deadline %></td>
+       <td><%= goal.deadline.toISOString().slice(5, 10)%>-<%= goal.deadline.toISOString().slice(0, 4)%></td>
        <td>
         <a href="/goals/<%= goal._id %>">
           <button>Details</button>

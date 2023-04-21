@@ -6,7 +6,7 @@
     <h2><%= goal.category %></h2>
   </div>
   <h1><%= title %></h1>
-  <p>Deadline is on <%= goal.deadline %></p>
+  <p>Deadline is on <%= goal.deadline.toString().slice(0, 10)%>, <%= goal.deadline.toISOString().slice(0, 4)%></p>
   <p><%= goal.content %></p>
   <div class="btns">
     <a href="/goals/<%= goal._id %>/edit">
@@ -16,9 +16,9 @@
       <button>Check-In</button>
     </a>
   </div>
-  <h2>Check-In</h2>
+  <h2>Check-Ins</h2>
   <% goal.checkIns.forEach(checkIn => { %>
-    <p>Date: <%= checkIn.date %></p>
+    <p>Date: <%= checkIn.date.toISOString().slice(5,10) %>-<%= checkIn.date.toISOString().slice(0,4) %></p>
     <p><%= checkIn.notes %></p>
   <% }) %>
 </main>

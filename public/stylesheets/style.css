@@ -12,8 +12,8 @@ html {
 }
 
 body {
-  background-color: #ececec;
-  color: #000000;
+  background-color: #f5f5f5;
+  color: #464937;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
@@ -21,7 +21,7 @@ body {
 }
 
 nav {
-  background-color: #b4b4b4;
+  background-color: #76826e;
   display: flex;
   align-items: center;
   padding: 10px;
@@ -69,4 +69,9 @@ main {
 
 .btns{
   display: flex;
+  background-color: #76826e;
+}
+button{
+  background-color: #76826e;
+  color: #f5f5f5;
 }
