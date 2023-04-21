@@ -6,6 +6,7 @@ const router = Router()
 
 router.get('/', isLoggedIn, goalsCtrl.index)
 router.get('/new', isLoggedIn, goalsCtrl.new)
+router.get('/:goalId', isLoggedIn, goalsCtrl.show)
 router.post('/', goalsCtrl.create)
 router.delete('/:goalId', goalsCtrl.delete)
 

@@ -1,0 +1,17 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <div class="category-container">
+    <h2><%= goal.category %></h2>
+  </div>
+  <h1><%= title %></h1>
+  <p>Deadline is on <%= goal.deadline %></p>
+  <p><%= goal.content %></p>
+  <button>Edit Goal</button>
+  <button>Check-In</button>
+</main>
+
+
+
+<%- include('../partials/footer') %>

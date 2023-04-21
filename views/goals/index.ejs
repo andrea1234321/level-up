@@ -17,7 +17,9 @@
        <td><%= goal.title %></td>
        <td><%= goal.deadline %></td>
        <td>
-         <button>Details</button>
+        <a href="/goals/<%= goal._id %>">
+          <button>Details</button>
+        </a>
         </td>
         <td>
           <button>Check-In</button>

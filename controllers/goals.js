@@ -43,9 +43,24 @@ function deleteGoal(req,res){
   }) 
 }
 
+function show(req,res){
+  Goal.findById(req.params.goalId)
+  .then(goal=> {
+    res.render('goals/show', {
+      title: goal.title,
+      goal: goal
+    })
+  })
+  .catch(err=> {
+    console.log(err)
+    res.redirect('/')
+  }) 
+}
+
 export{
   index,
   newGoal as new,
   create,
-  deleteGoal as delete
+  deleteGoal as delete,
+  show
 }
