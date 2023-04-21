@@ -17,18 +17,13 @@ function newGoal(req,res){
 }
 
 function create(req,res){
-  for (let key in req.body){
-    if (req.body[key]=== ''){
-      delete req.body[key]
-    }
-  }
   Goal.create(req.body)
   .then(goal=> {
     res.redirect('/goals')
   })
   .catch(err=> {
     console.log(err)
-    res.redirect('/')
+    res.redirect('/goals')
   })
 }
 

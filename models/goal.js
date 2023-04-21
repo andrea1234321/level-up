@@ -2,15 +2,20 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
+const checkInSchema= new Schema({
+  date: Date,
+  notes: String,
+})
+
 const goalSchema = new Schema({
   category: {type: String, enum: ['Career', 'Health', 'Finance', 'Relationships', 'Spiritual', 'Other']},
-  title: String,
+  title: {type: String, required: true},
   deadline: {type: Date, function(){
     return new Date()
   }},
-  content: String,
+  content: {type: String, required: true},
   // completed: Boolean,
-  // checkIn: [weeklyCheckIn],
+  checkIn: [checkInSchema],
 }, {
   timestamps: true
 })
