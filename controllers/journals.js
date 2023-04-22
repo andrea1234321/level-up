@@ -37,6 +37,10 @@ function deleteJournalEntry(req,res){
   .then(()=> {
     res.redirect('/journals')
   })
+  .catch(err=> {
+    console.log(err)
+    res.redirect('/')
+  })
 }
 
 export{
