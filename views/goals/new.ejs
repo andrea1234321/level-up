@@ -1,11 +1,12 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="../stylesheets/goals/new.css">
 <%- include('../partials/nav') %>
 
 
 <main>
   <h1> <%= title %></h1>
   <form action="/goals" method="POST">
-    <div class="new-goal-container">
+    <div class="container">
       <label>Category: 
         <select name="category">
           <option>Career</option>
@@ -17,13 +18,13 @@
         </select>
       </label>
       <label>Title: 
-        <input type="text" name="title" autocomplete="off" required>
+        <input type="text" name="title" autocomplete="off" required class="title-input">
       </label>
       <label>Deadline: 
         <input type="date" name="deadline" autocomplete="off" value="<%= todaysDate %>" required>
       </label>
       <label>Goal: 
-        <input type="text" name="content" autocomplete="off" required>
+        <textarea name="content" cols="40" rows="10" required></textarea>
       </label>
       <button>Create Goal</button>
     </div>

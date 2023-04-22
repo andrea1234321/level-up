@@ -20,22 +20,7 @@ td{
   padding-bottom: 25px;
 }
 
-button{
-  padding: 7px;
-  border-radius: 5%;
-  border: none;
-}
-
-button:hover{
-  cursor: pointer;
-  background-color: #464937;
-  box-shadow: 0 0 6px black;
-}
-
-button:active{
-  box-shadow: 0 0 0;
-}
-
 .new-goal-btn{
   margin-top: 25px;
 }
+

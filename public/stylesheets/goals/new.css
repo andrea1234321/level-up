@@ -1,0 +1,32 @@
+main{
+  margin-top: 20px;
+}
+
+.container{
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+label{
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+label>:nth-child(1){
+  margin-left: 40px;
+  padding: 5px;
+}
+.title-input{
+  width: 250px;
+}
+
+textarea{
+  padding: 10px;
+}
+
+button{
+  width: fit-content;
+  margin: 0 auto;
+}
