@@ -1,26 +1,26 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="../stylesheets/goals/show.css">
 <%- include('../partials/nav') %>
 
 <main>
-  <div class="category-container">
-    <h2><%= goal.category %></h2>
-  </div>
+  <h2><%= goal.category %> Goal:</h2>
   <h1><%= title %></h1>
   <p>Deadline is on <%= goal.deadline.toString().slice(0, 10)%>, <%= goal.deadline.toISOString().slice(0, 4)%></p>
-  <p><%= goal.content %></p>
-  <div class="btns">
-    <a href="/goals/<%= goal._id %>/edit">
-      <button>Edit Goal</button>
-    </a>
-    <a href="/goals/<%= goal._id %>/checkIn/new">
-      <button>Check-In</button>
-    </a>
-  </div>
-  <h2>Check-Ins</h2>
+  <p class="goal-content-header">Details: </p>
+  <p class="goal-content"><%= goal.content %></p>
+  <a href="/goals/<%= goal._id %>/edit">
+    <button>Edit Goal</button>
+  </a>
+  <h2 class="checkin-header">Check-Ins</h2>
   <% goal.checkIns.forEach(checkIn => { %>
-    <p>Date: <%= checkIn.date.toISOString().slice(5,10) %>-<%= checkIn.date.toISOString().slice(0,4) %></p>
-    <p><%= checkIn.notes %></p>
-  <% }) %>
+    <div class="checkin-container">
+      <p class="checkin-date"><%= checkIn.date.toISOString().slice(5,10) %>-<%= checkIn.date.toISOString().slice(0,4) %>:</p>
+      <p class="checkin-content"><%= checkIn.notes %></p>
+    </div>
+    <% }) %>
+  <a href="/goals/<%= goal._id %>/checkIn/new">
+    <button>Check-In</button>
+  </a>
 </main>
 
 

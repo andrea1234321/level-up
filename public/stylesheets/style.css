@@ -58,6 +58,7 @@ nav {
 }
 
 main {
+  margin-top: 20px;
   display: flex;
   text-align: center;
   align-items: center;
@@ -76,11 +77,6 @@ h1{
   width: 150px;
   margin: 0 auto;
   margin-bottom: 300px;
-}
-
-.category-container{
-  display: flex;
-  text-align: left;
 }
 
 .btns{
