@@ -1,18 +1,17 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="../stylesheets/journals/index.css">
 <%- include('../partials/nav') %>
 <main>
   <h1><%= title %></h1>
   <% journals.forEach(journal => { %>
     <form action="/journals/<%= journal._id %>?_method=DELETE" method="POST">
-      <div class="journal">
-        <p><%= journal.date.toString().slice(4,10) %>, <%= journal.date.toISOString().slice(0,4) %></p>
-        <button>X</button>
-      </div>
-      <p><%= journal.content %></p>
+      <p><%= journal.date.toString().slice(4,10) %>, <%= journal.date.toISOString().slice(0,4) %></p>
+      <p class="journal-content"><%= journal.content %></p>
+      <button class="delete-btn">X</button>
+    </form>
     <% }) %>
-  </form>
   <a href="/journals/new">
-    <button>Create New Entry</button>
+    <button class="new-journal-btn">Create New Entry</button>
   </a>
 </main>
 <%- include('../partials/footer') %>
