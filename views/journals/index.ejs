@@ -1,0 +1,10 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+<main>
+  <h1><%= title %></h1>
+  <% journals.forEach(journal => { %>
+   <button><%= journal.date %></button>
+  <% }) %>
+  <button>Create New Entry</button>
+</main>
+<%- include('../partials/footer') %>
