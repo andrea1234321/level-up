@@ -131,3 +131,7 @@ thead th:nth-child(6) {
 th{
   padding: 5px;
 }
+
+.journal{
+  display: flex;
+}

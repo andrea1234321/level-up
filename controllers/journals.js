@@ -20,7 +20,28 @@ function newJournal(req,res){
   })
 }
 
+function create(req,res){
+  Journal.create(req.body)
+  .then(journal=> {
+    console.log(req.body, 'LOOK AT THIS')
+    res.redirect('/journals')
+  })
+  .catch(err=> {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
+function deleteJournalEntry(req,res){
+  Journal.findByIdAndDelete(req.params.journalId)
+  .then(()=> {
+    res.redirect('/journals')
+  })
+}
+
 export{
   index,
-  newJournal as new
+  newJournal as new,
+  create,
+  deleteJournalEntry as delete
 }

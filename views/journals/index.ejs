@@ -3,8 +3,14 @@
 <main>
   <h1><%= title %></h1>
   <% journals.forEach(journal => { %>
-   <button><%= journal.date %></button>
-  <% }) %>
+    <form action="/journals/<%= journal._id %>?_method=DELETE" method="POST">
+      <div class="journal">
+        <p><%= journal.date.toString().slice(4,10) %>, <%= journal.date.toISOString().slice(0,4) %></p>
+        <button>X</button>
+      </div>
+      <p><%= journal.content %></p>
+    <% }) %>
+  </form>
   <a href="/journals/new">
     <button>Create New Entry</button>
   </a>

@@ -2,9 +2,9 @@
 <%- include('../partials/nav') %>
 <main>
   <h1><%= title %></h1>
+  <form action="/journals" method="POST">
   <input type="date" name="date" value="<%= new Date().toISOString().slice(0,10) %>">
-  <input type="text" name="content">
-  <form action="">
+  <input type="text" name="content" required>
     <button>Submit</button>
   </form>
 </main>
