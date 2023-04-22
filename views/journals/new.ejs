@@ -1,0 +1,11 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+<main>
+  <h1><%= title %></h1>
+  <input type="date" name="date" value="<%= new Date().toISOString().slice(0,10) %>">
+  <input type="text" name="content">
+  <form action="">
+    <button>Submit</button>
+  </form>
+</main>
+<%- include('../partials/footer') %>

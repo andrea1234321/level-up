@@ -14,6 +14,13 @@ function index(req,res){
   })
 }
 
+function newJournal(req,res){
+  res.render('journals/new', {
+    title: 'Journal Entry'
+  })
+}
+
 export{
-  index
+  index,
+  newJournal as new
 }
