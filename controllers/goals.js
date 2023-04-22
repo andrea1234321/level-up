@@ -60,7 +60,7 @@ function edit(req,res){
   Goal.findById(req.params.goalId)
   .then(goal=> {
     res.render('goals/edit', {
-      title: goal.title,
+      title: "Edit Goal",
       goal: goal,
       todaysDate
     })

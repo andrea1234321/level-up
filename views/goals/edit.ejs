@@ -1,11 +1,14 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="../../stylesheets/goals/new.css">
 <%- include('../partials/nav') %>
 
 <main>
+  <h1> <%= title %></h1>
   <form action="/goals/<%= goal._id %>?_method=PUT" method="POST">
-    <div class="category-container">
+    <div class="container">
       <label>Category: 
-        <select name="category" value="<%= goal.category %>">
+        <select name="category">
+          <option><%= goal.category %></option>
           <option>Career</option>
           <option>Health</option>
           <option>Finance</option>
@@ -14,18 +17,19 @@
           <option>Other</option>
         </select>
       </label>
+      <label>Title: 
+        <input type="text" name="title" autocomplete="off" value="<%= goal.title %>" required>
+      </label>
+      <label>Deadline: 
+        <input type="date" name="deadline" autocomplete="off" value="<%= goal.deadline.toISOString().slice(0, 10) %>" required>
+      </label>
+      <label>Goal: 
+        <textarea name="content" cols="40" rows="10" required><%= goal.content %></textarea>
+      </label>
+      <button>Update</button>
     </div>
-    <h1>
-      <input type="text" name="title" autocomplete="off" value="<%= title %>">
-    </h1>
-    <p>Deadline is on <input type="date" name="deadline" autocomplete="off" value="<%= goal.deadline.toISOString().slice(0, 10) %>"></p>
-    <p><input type="text" name="content" autocomplete="off" value="<%= goal.content %>"></p>
-    <div class="btns">
-        <button>Update</button>
-      </div>
   </form>
 </main>
 
-
-
 <%- include('../partials/footer') %>
+

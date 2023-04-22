@@ -1,20 +1,15 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/goals/check-in.css">
 <%- include('../partials/nav') %>
 
 <main>
-  <h1><%= title %></h1>
-  <div class="category-container">
-    <h2><%= goal.category %> goal: <%= goal.title %></h2>
-  </div>
-  <p>Deadline is on <%= goal.deadline %></p>
-  <p>You have X months until your deadline, keep it up, you've got this!</p>
-  <p>Todays Date: </p>
+  <h2><%= goal.category %> goal:</h2>
+  <h1><%= goal.title %></h1>
+  <p>Deadline is on <%= goal.deadline.toString().slice(0, 10)%>, <%= goal.deadline.toISOString().slice(0, 4)%></p>
   <form action="/goals/<%= goal._id %>" method="POST">
     <input type="date" name="date" value="<%= todaysDate %>" required>
-    <input type="text" name="notes">
-    <div class="btns">
-      <button>Submit check-In</button>
-    </div>
+    <textarea name="notes" cols="30" rows="10" required></textarea>
+    <button>Submit check-In</button>
   </form>
 </main>
 
