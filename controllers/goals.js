@@ -19,6 +19,7 @@ function newGoal(req,res){
 }
 
 function create(req,res){
+  req.body.owner = req.user.profile._id
   Goal.create(req.body)
   .then(goal=> {
     res.redirect('/goals')
