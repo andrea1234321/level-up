@@ -146,6 +146,20 @@ function createCheckIn(req,res){
   }) 
 }
 
+function deleteCheckIn(req,res){
+  //find goal
+  Goal.findById(req.params.goalId)
+  .then(goal=> {
+    //find the checkin
+    //delete checkin
+    goal.checkIns.remove(req.params.checkInId)
+    goal.save()
+    .then(()=> {
+      res.redirect(`/goals/${goal._id}`)
+    })
+  })
+}
+
 export{
   index,
   newGoal as new,
@@ -155,5 +169,6 @@ export{
   edit,
   update,
   newCheckIn,
-  createCheckIn
+  createCheckIn,
+  deleteCheckIn
 }

@@ -23,14 +23,16 @@ p{
 }
 .checkin-container{
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
 
 .checkin-content{
   margin-left: 25px;
+  margin-right: 25px;
   text-align: left;
 }
 
 .checkin-date{
   margin-bottom: 0;
 }
+

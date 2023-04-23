@@ -13,11 +13,14 @@
   </a>
   <h2 class="checkin-header">Check-Ins</h2>
   <% goal.checkIns.forEach(checkIn => { %>
-    <div class="checkin-container">
-      <p class="checkin-date"><%= checkIn.date.toISOString().slice(5,10) %>-<%= checkIn.date.toISOString().slice(0,4) %>:</p>
-      <p class="checkin-content"><%= checkIn.notes %></p>
-    </div>
-    <% }) %>
+    <form action="/goals/<%= goal._id %>/checkIn/<%= checkIn._id %>?_method=DELETE" method="POST">
+      <div class="checkin-container">
+        <p class="checkin-date"><%= checkIn.date.toISOString().slice(5,10) %>-<%= checkIn.date.toISOString().slice(0,4) %>:</p>
+        <p class="checkin-content"><%= checkIn.notes %></p>
+        <button>X</button>
+      </div>
+    </form>
+  <% }) %>
   <a href="/goals/<%= goal._id %>/checkIn/new">
     <button>Check-In</button>
   </a>

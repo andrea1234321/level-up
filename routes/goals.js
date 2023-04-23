@@ -12,6 +12,7 @@ router.get('/:goalId/checkIn/new', goalsCtrl.newCheckIn)
 router.post('/', goalsCtrl.create)
 router.post('/:goalId', goalsCtrl.createCheckIn)
 router.delete('/:goalId', goalsCtrl.delete)
+router.delete('/:goalId/checkIn/:checkInId', goalsCtrl.deleteCheckIn)
 router.put('/:goalId', goalsCtrl.update)
 
 export {
