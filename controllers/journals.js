@@ -1,11 +1,13 @@
 import { Journal } from "../models/journal.js";
+import { Profile } from "../models/profile.js";
+import moment from 'moment'
 
 function index(req,res){
-  Journal.find({})
+  Journal.find({owner: req.user.profile._id})
   .then(journals=> {
     res.render('journals/index', {
       title: 'Journal Entries',
-      journals: journals
+      journals: journals,
     })
   })
   .catch(err=> {
@@ -21,10 +23,25 @@ function newJournal(req,res){
 }
 
 function create(req,res){
+  req.body.owner= req.user.profile._id
   Journal.create(req.body)
   .then(journal=> {
-    console.log(req.body, 'LOOK AT THIS')
-    res.redirect('/journals')
+    Profile.findById(req.user.profile._id)
+    .then(profile=> {
+      profile.journals.push(journal)
+      profile.save()
+      .then(()=> {
+        res.redirect('/journals')
+      })
+      .catch(err=> {
+        console.log(err)
+        res.redirect('/')
+      })
+    })
+    .catch(err=> {
+      console.log(err)
+      res.redirect('/')
+    })
   })
   .catch(err=> {
     console.log(err)

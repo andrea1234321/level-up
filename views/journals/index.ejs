@@ -5,7 +5,7 @@
   <h1><%= title %></h1>
   <% journals.forEach(journal => { %>
     <form action="/journals/<%= journal._id %>?_method=DELETE" method="POST">
-      <p><%= journal.date.toString().slice(4,10) %>, <%= journal.date.toISOString().slice(0,4) %></p>
+      <p><%= journal.date.toISOString().slice(5,10) %>-<%= journal.date.toISOString().slice(0,4) %></p>
       <p class="journal-content"><%= journal.content %></p>
       <button class="delete-btn">X</button>
     </form>

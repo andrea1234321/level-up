@@ -1,5 +1,6 @@
 import { Goal } from "../models/goal.js"
 import { Profile } from "../models/profile.js"
+import moment from 'moment'
 
 function index(req,res){
   Goal.find({owner: req.user.profile._id})
@@ -64,10 +65,13 @@ function deleteGoal(req,res){
 function show(req,res){
   Goal.findById(req.params.goalId)
   .then(goal=> {
-    console.log(goal)
+    let date= goal.deadline.toISOString().slice(0,10)
+    let time= goal.deadline.toISOString().slice(11,19)
+    let goalDeadline= moment(date + ' ' + time).format("llll").slice(0,17)
     res.render('goals/show', {
       title: goal.title,
-      goal: goal
+      goal: goal,
+      goalDeadline
     })
   })
   .catch(err=> {
@@ -107,10 +111,14 @@ function newCheckIn(req,res){
   const todaysDate= new Date().toISOString().slice(0, 10)
   Goal.findById(req.params.goalId)
   .then(goal=> {
+    let date= goal.deadline.toISOString().slice(0,10)
+    let time= goal.deadline.toISOString().slice(11,19)
+    let goalDeadline= moment(date + ' ' + time).format("llll").slice(0,17)
     res.render('goals/check-in', {
       title: 'Check-In',
       goal: goal,
-      todaysDate
+      todaysDate,
+      goalDeadline
     })
   })
   .catch(err=> {

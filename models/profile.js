@@ -13,6 +13,7 @@ const profileSchema = new Schema({
   name: String,
   avatar: String,
   goals: [{type: Schema.Types.ObjectId, ref: 'Goal' }],
+  journals: [{type: Schema.Types.ObjectId, ref: 'Journal' }],
   // journals: [journalSchema],
 }, {
   timestamps: true

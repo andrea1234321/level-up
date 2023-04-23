@@ -5,7 +5,7 @@
 <main>
   <h2><%= goal.category %> goal:</h2>
   <h1><%= goal.title %></h1>
-  <p>Deadline is on <%= goal.deadline.toString().slice(0, 10)%>, <%= goal.deadline.toISOString().slice(0, 4)%></p>
+  <p>Deadline is on <%= goalDeadline%></p>
   <form action="/goals/<%= goal._id %>" method="POST">
     <input type="date" name="date" value="<%= todaysDate %>" required>
     <textarea name="notes" cols="30" rows="10" required></textarea>
