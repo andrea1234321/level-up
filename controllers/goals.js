@@ -147,11 +147,8 @@ function createCheckIn(req,res){
 }
 
 function deleteCheckIn(req,res){
-  //find goal
   Goal.findById(req.params.goalId)
   .then(goal=> {
-    //find the checkin
-    //delete checkin
     goal.checkIns.remove(req.params.checkInId)
     goal.save()
     .then(()=> {

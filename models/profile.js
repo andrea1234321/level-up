@@ -12,6 +12,9 @@ const Schema = mongoose.Schema
 const profileSchema = new Schema({
   name: String,
   avatar: String,
+  outgoingFriendRequests: [{type: Schema.Types.ObjectId, ref: 'Profile'}],
+  incomingFriendRequests: [{type: Schema.Types.ObjectId, ref: 'Profile'}],
+  friends: [{type: Schema.Types.ObjectId, ref: 'Profile'}],
   goals: [{type: Schema.Types.ObjectId, ref: 'Goal' }],
   journals: [{type: Schema.Types.ObjectId, ref: 'Journal' }],
   // journals: [journalSchema],
