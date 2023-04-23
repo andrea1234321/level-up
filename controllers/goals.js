@@ -1,12 +1,17 @@
 import { Goal } from "../models/goal.js"
+import { Profile } from "../models/profile.js"
 
 function index(req,res){
-  Goal.find({})
+  Goal.find({owner: req.user.profile._id})
   .then(goals=> {
     res.render('goals/index', {
       title: 'Current Goals',
       goals: goals
     })
+  })
+  .catch(err=> {
+    console.log(err)
+    res.redirect('/')
   })
 }
 
@@ -22,11 +27,26 @@ function create(req,res){
   req.body.owner = req.user.profile._id
   Goal.create(req.body)
   .then(goal=> {
-    res.redirect('/goals')
+    Profile.findById(req.user.profile._id)
+    .then(profile=> {
+      profile.goals.push(goal)
+      profile.save()
+      .then(()=> {
+        res.redirect('/goals')
+      })
+      .catch(err=> {
+        console.log(err)
+        res.redirect('/')
+      })
+    })
+    .catch(err=> {
+      console.log(err)
+      res.redirect('/')
+    })
   })
   .catch(err=> {
     console.log(err)
-    res.redirect('/goals')
+    res.redirect('/')
   })
 }
 
@@ -52,7 +72,7 @@ function show(req,res){
   })
   .catch(err=> {
     console.log(err)
-    res.redirect('/')
+    res.redirect('/goals')
   }) 
 }
 
@@ -76,6 +96,10 @@ function update(req,res){
   Goal.findByIdAndUpdate(req.params.goalId, req.body, {new: true})
   .then(goal=> {
     res.redirect(`/goals/${goal._id}`)
+  })
+  .catch(err=> {
+    console.log(err)
+    res.redirect('/goals')
   })
 }
 
