@@ -20,9 +20,14 @@
           <form action="/profiles/<%= profile._id %>/acceptFriend" method="POST">
             <button>Accept</button>
           </form>
-          <button>Decline</button>
+          <form action="/profiles/<%= profile._id %>/declineFriend" method="POST">
+            <button>Decline</button>
+          </form>
         <% } else if (userProfile.friends.includes(profile._id)) { %>
           <p>You are friends</p>
+          <a href="/profiles/<%= profile._id %>/show">
+            <button>See Profile</button>
+          </a>
         <%} else { %>
         <form action="/profiles/<%= profile._id %>/requestFriend" method="POST">
           <button>Send friend request</button>

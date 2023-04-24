@@ -1,0 +1,35 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/goals/index.css">
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %>'s Goals</h1>
+  <% if (friendProfile.goals.length>0) { %>
+    <table>
+      <thead>
+        <tr class="row-header">
+          <th>Category</th>
+          <th>Title</th>
+          <th>Deadline</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% friendProfile.goals.forEach(goal => { %>
+         <tr>
+           <td><%= goal.category %></td>
+           <td><%= goal.title %></td>
+           <td><%= goal.deadline.toISOString().slice(5, 10)%>-<%= goal.deadline.toISOString().slice(0, 4)%></td>
+           <td>
+            <button>Details</button>
+          </td>
+         </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </main>
+  <% }else { %>
+    <p>Looks like <%= friendProfile.name %> has not created any goals yet</p>  
+  <% } %>
+
+<%- include('../partials/footer') %>
