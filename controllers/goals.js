@@ -7,7 +7,7 @@ function index(req,res){
   .then(goals=> {
     res.render('goals/index', {
       title: 'Current Goals',
-      goals: goals
+      goals: goals.sort((a,b)=> a.deadline-b.deadline)
     })
   })
   .catch(err=> {

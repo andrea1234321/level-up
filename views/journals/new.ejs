@@ -6,7 +6,7 @@
   <form action="/journals" method="POST">
     <input type="date" name="date" value="<%= new Date().toISOString().slice(0,10) %>" required>
     <textarea name="content" cols="30" rows="10" required></textarea>
-    <button>Submit</button>
+    <button class="submit-btn">Submit</button>
   </form>
 </main>
 <%- include('../partials/footer') %>

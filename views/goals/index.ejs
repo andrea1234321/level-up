@@ -6,6 +6,7 @@
   <table>
     <thead>
       <tr class="row-header">
+        <!-- <th></th> -->
         <th>Category</th>
         <th>Title</th>
         <th>Deadline</th>
@@ -17,6 +18,9 @@
     <tbody>
       <% goals.forEach(goal => { %>
        <tr>
+         <!-- <td>
+           <input type="checkbox">
+         </td> -->
          <td><%= goal.category %></td>
          <td><%= goal.title %></td>
          <td><%= goal.deadline.toISOString().slice(5, 10)%>-<%= goal.deadline.toISOString().slice(0, 4)%></td>
@@ -43,5 +47,9 @@
     <button class="new-goal-btn">Create new goal</button>
   </a>
 </main>
-
+<!-- <script>
+  function sortFunction(){
+    goals.sort((a,b)=> a.category-b.category)
+  }
+</script> -->
 <%- include('../partials/footer') %>
