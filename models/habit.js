@@ -3,13 +3,12 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const habitSchema = new Schema({
-  habit: String,
-  oldCue: String,
-  oldRoutine: String,
-  oldReward: String,
-  newCue: String,
-  newRoutine: String,
-  newReward: String,
+  routine: String,
+  cue: String,
+  reward: String,
+  // identifyCue: [identifyCue],
+  // identifyReward: [identifyReward],
+  // actionPlan: String,
   owner: { type: Schema.Types.ObjectId, ref: 'Profile' },
 }, {
   timestamps: true,

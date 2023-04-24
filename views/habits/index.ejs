@@ -3,9 +3,18 @@
 
 <main>
   <h1><%= title %></h1>
+  <p>I want to:</p>
   <a href="/habits/new">
-    <button>New Habit</button>
+    <button>Break a habit</button>
   </a>
+  <% habits.forEach(habit => { %>
+   <p>I am trying to break my
+    <%= habit.routine %> habit
+   </p>
+   <a href="/habits/<%= habit._id %>">
+    <button>Details</button>
+  </a>
+  <% }) %>
 </main>
 
 <%- include('../partials/footer') %>

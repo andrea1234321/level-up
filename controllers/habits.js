@@ -9,15 +9,47 @@ function index(req,res){
       habits: habits
     })
   })
+  .catch(err=> {
+    console.log(err)
+    res.redirect('/')
+  })
 }
 
 function newHabit(req,res){
   res.render('habits/new', {
-    title: 'New habit'
+    title: 'Habit to break'
+  })
+}
+
+function create(req,res){
+  req.body.owner= req.user.profile._id
+  Habit.create(req.body)
+  .then(habit=> {
+    Profile.findById(req.user.profile._id)
+    .then(profile=> {
+      profile.habits.push(habit)
+      profile.save()
+      .then(()=> {
+        res.redirect('/habits')
+      })
+      .catch(err=> {
+        console.log(err)
+        res.redirect('/')
+      })
+    })
+    .catch(err=> {
+      console.log(err)
+      res.redirect('/')
+    })
+  })
+  .catch(err=> {
+    console.log(err)
+    res.redirect('/')
   })
 }
 
 export{
   index,
-  newHabit as new
+  newHabit as new,
+  create
 }
