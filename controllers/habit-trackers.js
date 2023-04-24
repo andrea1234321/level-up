@@ -1,7 +1,14 @@
-import { HabitTracker } from "../models/habit-tracker.js";
+import { HabitTracker } from "../models/habit-tracker.js"
+import { Profile } from "../models/profile.js"
 
 function index(req,res){
-  console.log('working')
+  HabitTracker.find({owner: req.user.profile._id})
+  .then(habitTrackers=> {
+    res.render('habit-trackers/index', {
+      title: 'Habits',
+      habitTrackers: habitTrackers
+    })
+  })
 }
 
 export{

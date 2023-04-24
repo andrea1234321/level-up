@@ -8,7 +8,7 @@ const habitTrackerSchema = new Schema({
   amount: Number,
   period: {type: String, enum: ['days', 'weeks', 'months', 'years']},
   reward: String,
-  profile: { type: Schema.Types.ObjectId, ref: 'Profile' },
+  owner: { type: Schema.Types.ObjectId, ref: 'Profile' },
 }, {
   timestamps: true,
 })
