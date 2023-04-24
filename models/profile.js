@@ -17,7 +17,7 @@ const profileSchema = new Schema({
   friends: [{type: Schema.Types.ObjectId, ref: 'Profile'}],
   goals: [{type: Schema.Types.ObjectId, ref: 'Goal' }],
   journals: [{type: Schema.Types.ObjectId, ref: 'Journal' }],
-  // journals: [journalSchema],
+  habitTracker: [{type: Schema.Types.ObjectId, ref: 'HabitTracker' }],
 }, {
   timestamps: true
 })
