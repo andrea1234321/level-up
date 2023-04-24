@@ -1,0 +1,36 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <label>New Habit: 
+    <input type="text" name="Habit" autocomplete="off" required>
+  </label>
+  <div>
+    <h2>Old Habit Loop:</h2>
+    <label>Cue: 
+      <input type="text" name="oldCue" autocomplete="off" required>
+    </label>
+    <label>Routine: 
+      <input type="text" name="oldRoutine" autocomplete="off" required>
+    </label>
+    <label>Reward: 
+      <input type="text" name="oldReward" autocomplete="off" required>
+    </label>
+  </div>
+  <div>
+    <h2>New Habit Loop:</h2>
+    <label>Cue: 
+      <input type="text" name="newCue" autocomplete="off" required>
+    </label>
+    <label>Routine: 
+      <input type="text" name="newRoutine" autocomplete="off" required>
+    </label>
+    <label>Reward: 
+      <input type="text" name="newReward" autocomplete="off" required>
+    </label>
+  </div>
+  <button>Submit</button>
+</main>
+
+<%- include('../partials/footer') %>

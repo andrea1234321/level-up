@@ -24,7 +24,7 @@ import { router as authRouter } from './routes/auth.js'
 import { router as goalsRouter } from './routes/goals.js'
 import { router as journalsRouter } from './routes/journals.js'
 import { router as profilesRouter } from './routes/profiles.js'
-import { router as habitTrackersRouter } from './routes/habit-trackers.js'
+import { router as habitsRouter } from './routes/habits.js'
 
 // create the express app
 const app = express()
@@ -68,7 +68,7 @@ app.use('/auth', authRouter)
 app.use('/goals', goalsRouter)
 app.use('/journals', journalsRouter)
 app.use('/profiles', profilesRouter)
-app.use('/habit-trackers', habitTrackersRouter)
+app.use('/habits', habitsRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
