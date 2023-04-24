@@ -1,0 +1,16 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <p>Breaking a habit is a 4 step process. We have identified the routine as being <%= habit.routine %>, now we move on to step 2 and 3</p>
+  <ol>
+    <li><strong>Identify the routine:</strong> <%= habit.routine %></li>
+    <li>Identify the reward <%= habit.reward %></li>
+    <li>Identify the cue <%= habit.cue %></li>
+    <li>Have an action plan</li>
+  </ol>
+  <button>Identify the reward</button>
+  <button>Identify the cue</button>
+</main>
+<%- include('../partials/footer') %>

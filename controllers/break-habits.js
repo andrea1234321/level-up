@@ -1,11 +1,11 @@
-import { Habit } from "../models/habit.js"
+import { BreakHabit } from "../models/break-habit.js"
 import { Profile } from "../models/profile.js"
 
 function index(req,res){
-  Habit.find({owner: req.user.profile._id})
+  BreakHabit.find({owner: req.user.profile._id})
   .then(habits=> {
-    res.render('habits/index', {
-      title: 'Habits',
+    res.render('break-habits/index', {
+      title: 'Break Habits',
       habits: habits
     })
   })
@@ -15,22 +15,22 @@ function index(req,res){
   })
 }
 
-function newHabit(req,res){
-  res.render('habits/new', {
+function newHabitToStop(req,res){
+  res.render('break-habits/new', {
     title: 'Habit to break'
   })
 }
 
 function create(req,res){
   req.body.owner= req.user.profile._id
-  Habit.create(req.body)
+  BreakHabit.create(req.body)
   .then(habit=> {
     Profile.findById(req.user.profile._id)
     .then(profile=> {
-      profile.habits.push(habit)
+      profile.breakHabits.push(habit)
       profile.save()
       .then(()=> {
-        res.redirect('/habits')
+        res.redirect('/breakHabits')
       })
       .catch(err=> {
         console.log(err)
@@ -48,8 +48,23 @@ function create(req,res){
   })
 }
 
+function show(req,res){
+  BreakHabit.findById(req.params.breakHabitId)
+  .then(habit=> {
+    res.render('break-habits/show', {
+      title: `${habit.routine}`,
+      habit: habit
+    })
+  })
+  .catch(err=> {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export{
   index,
-  newHabit as new,
-  create
+  newHabitToStop as new,
+  create,
+  show
 }
