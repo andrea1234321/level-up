@@ -3,13 +3,15 @@
 
 <main>
   <h1><%= title %></h1>
-  <label>Reward: 
-    <input type="text" name="reward" required>
-  </label>
-  <label>Notes:
-    <textarea name="notes" id="" cols="30" rows="10" required placeholder="Write what came to mind immediately after getting this reward, or the first 3 things that popped in your head."></textarea>
-  </label>
-  <button>Submit</button>
+  <form action="/break-habits/<%= habit._id %>" method="POST">
+    <label>Reward: 
+      <input type="text" name="reward" required>
+    </label>
+    <label>Notes:
+      <textarea name="notes" id="" cols="30" rows="10" required placeholder="Write what came to mind immediately after getting this reward, or the first 3 things that popped in your head."></textarea>
+    </label>
+    <button>Submit</button>
+  </form>
 </main>
 
 <%- include('../partials/footer') %>

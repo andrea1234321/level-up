@@ -9,6 +9,7 @@ router.get('/new', isLoggedIn, breakHabitsCtrl.new)
 router.get('/:breakHabitId', isLoggedIn, breakHabitsCtrl.show)
 router.get('/:breakHabitId/possible-rewards/new', isLoggedIn, breakHabitsCtrl.newPossibleReward)
 router.post('/', isLoggedIn, breakHabitsCtrl.create)
+router.post('/:breakHabitId', isLoggedIn, breakHabitsCtrl.createPossibleReward)
 
 export {
   router

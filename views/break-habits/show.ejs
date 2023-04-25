@@ -13,6 +13,14 @@
   <a href="/break-habits/<%= habit._id %>/possible-rewards/new">
     <button>Track possible rewards</button>
   </a>
+  <% habit.possibleRewards.forEach(possibleReward => { %>
+    <p>
+      <%= possibleReward.reward %>
+    </p>
+    <p>
+      <%= possibleReward.notes %>  
+    </p>
+  <% }) %>
   <button>Identify the cue</button>
 </main>
 <%- include('../partials/footer') %>

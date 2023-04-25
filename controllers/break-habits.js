@@ -76,10 +76,30 @@ function newPossibleReward(req,res){
   })
 }
 
+function createPossibleReward(req,res){
+  BreakHabit.findById(req.params.breakHabitId)
+  .then(habit=> {
+    habit.possibleRewards.push(req.body)
+    habit.save()
+    .then(()=> {
+      res.redirect(`/break-habits/${habit._id}`)
+    })
+    .catch(err=> {
+      console.log(err)
+      res.redirect('/break-habits')
+    })
+  })
+  .catch(err=> {
+    console.log(err)
+    res.redirect('/break-habits')
+  })
+}
+
 export{
   index,
   newHabitToStop as new,
   create,
   show,
-  newPossibleReward
+  newPossibleReward,
+  createPossibleReward
 }
