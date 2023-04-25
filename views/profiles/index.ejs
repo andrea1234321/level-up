@@ -7,32 +7,74 @@
     <% if (userProfile.equals(profile._id)) { %>
     <% } else { %>
       <div class="container">
-        <img 
-          src="<%= profile.avatar %>" 
-          alt="<%= profile.name %>'s avatar"
-          class="friend-img"
-        >
-        <h3><%= profile.name %></h3>
         <%if (userProfile.outgoingFriendRequests.includes(profile._id)) { %>
-          <button>Pending</button>
-        </div>
+          <div class="profile-card">
+            <img 
+            src="<%= profile.avatar %>" 
+            alt="<%= profile.name %>'s avatar"
+            class="friend-img"
+            >
+            <h3><%= profile.name %></h3>
+            <button>Pending</button>
+          </div>
         <%} else if (userProfile.incomingFriendRequests.includes(profile._id)) { %>
-          <p>sent you a friend request</p>
+          <div class="profile-card">
+            <img 
+            src="<%= profile.avatar %>" 
+            alt="<%= profile.name %>'s avatar"
+            class="friend-img"
+            >
+            <h3><%= profile.name %></h3>
+            <p>sent you a friend request</p>
+          </div>
           <form action="/profiles/<%= profile._id %>/acceptFriend" method="POST">
-            <button>Accept</button>
+            <div class="profile-card">
+              <img 
+              src="<%= profile.avatar %>" 
+              alt="<%= profile.name %>'s avatar"
+              class="friend-img"
+              >
+              <h3><%= profile.name %></h3>
+              <button>Accept</button>
+            </div>
           </form>
           <form action="/profiles/<%= profile._id %>/declineFriend" method="POST">
-            <button>Decline</button>
+            <div class="profile-card">
+              <img 
+              src="<%= profile.avatar %>" 
+              alt="<%= profile.name %>'s avatar"
+              class="friend-img"
+              >
+              <h3><%= profile.name %></h3>
+              <button>Decline</button>
+            </div>
           </form>
         <% } else if (userProfile.friends.includes(profile._id)) { %>
-          <p>You are friends</p>
-          <a href="/profiles/<%= profile._id %>/show">
-            <button>See Profile</button>
-          </a>
+          <div class="profile-card">
+            <img 
+            src="<%= profile.avatar %>" 
+            alt="<%= profile.name %>'s avatar"
+            class="friend-img"
+            >
+            <h3><%= profile.name %></h3>
+            <p>You are friends</p>
+            <a href="/profiles/<%= profile._id %>/show">
+              <button>See Profile</button>
+            </a>
+          </div>
         <%} else { %>
         <form action="/profiles/<%= profile._id %>/requestFriend" method="POST">
-          <button>Send friend request</button>
+          <div class="profile-card">
+            <img 
+            src="<%= profile.avatar %>" 
+            alt="<%= profile.name %>'s avatar"
+            class="friend-img"
+            >
+            <h3><%= profile.name %></h3>
+            <button>Send friend request</button>
+          </div>
         </form>
+      </div>
       <% } %>
     <% } %>
   <% }) %>

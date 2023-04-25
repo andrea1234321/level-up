@@ -5,6 +5,17 @@ main{
 }
 .container{
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.friend-img{
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.profile-card{
+  display: flex;
   flex-direction: column;
   border: 2px solid #464937;
   border-radius: 10px;
@@ -14,9 +25,4 @@ main{
   width: 190px;
   height: fit-content;
   align-items: center;
-}
-.friend-img{
-  height: 100px;
-  width: 100px;
-  border-radius: 10px;
 }
