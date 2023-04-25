@@ -6,10 +6,10 @@
   <nav>
     <div class="nav-links-container">
       <% if (user) { %>
-        <a href="/goals" class="nav-links">Goals</a>
-        <a href="/journals" class="nav-links">Journal</a>
-        <a href="/break-habits" class="nav-links">Break A Habit</a>
-        <a href="/profiles" class="nav-links">Add Friends</a>
+        <a href="/goals" id="goals-link" class=<%= nav === 'goals' ? 'active-goal' : '' %>>Goals</a>
+        <a href="/journals" id="journal-link" class=<%= nav === 'journals' ? 'active-journal' : '' %>>Journal</a>
+        <a href="/break-habits" id="break-habit-link" class=<%= nav === 'break habit' ? 'active-habit' : '' %>>Break A Habit</a>
+        <a href="/profiles" id="add-friend-link" class=<%= nav === 'profiles' ? 'active-profiles' : '' %>>Add Friends</a>
         <% } %>
     </div>
     <div class="google">

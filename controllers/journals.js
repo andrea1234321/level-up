@@ -7,6 +7,7 @@ function index(req,res){
   .then(journals=> {
     res.render('journals/index', {
       title: 'Journal Entries',
+      nav: 'journals',
       journals: journals,
     })
   })

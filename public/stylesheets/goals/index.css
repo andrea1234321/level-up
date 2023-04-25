@@ -1,18 +1,36 @@
+.goals-container{
+  /* background-color: rgba(36,131,120,.3);
+  padding: 20px;
+  border-radius: 20px; */
+  width: 95%;
+  display: flex;
+  justify-content: center;
+}
+
 table{
   table-layout: fixed;
-  width: 90%;
+  width: 95%;
   border-collapse: collapse;
 }
 
 tr{
-  border-bottom: 1px solid #464937;
+  /* border-bottom: 1px solid #18323c; */
+  text-align: center;
 }
 thead{
   width: fit-content
 }
 
+tbody tr:nth-child(odd){
+  background-color: rgba(36,131,120,.3);
+}
+
+tbody tr:nth-child(even){
+  background-color: rgba(36,131,120,.1);
+}
+
 th{
-  padding: 10px;
+  padding-bottom: 10px;
 }
 
 td{
@@ -20,7 +38,27 @@ td{
   padding-bottom: 25px;
 }
 
+button{
+  background-color: #248378;
+}
+
 .new-goal-btn{
   margin-top: 25px;
 }
-
+.goal-card-container{
+  display: flex;
+  flex-direction: row;
+}
+.goal-card{
+  background-color: rgba(36,131,120,.3);
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #18323c;
+  height: 250px;
+  width: 200px;
+  margin: 15px;
+}
+a{
+  text-decoration: none;
+  color:#18323c;
+}

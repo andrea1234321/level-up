@@ -6,6 +6,7 @@ function index(req,res){
   .then(habits=> {
     res.render('break-habits/index', {
       title: 'Break Habits',
+      nav: 'break habit',
       habits: habits
     })
   })
@@ -53,6 +54,7 @@ function show(req,res){
   .then(habit=> {
     res.render('break-habits/show', {
       title: `${habit.routine}`,
+      nav: 'break habit',
       habit: habit
     })
   })
@@ -67,6 +69,7 @@ function newPossibleReward(req,res){
   .then(habit=> {
     res.render('break-habits/new-reward', {
       title: "Step 2: Experiment with Rewards",
+      nav: 'break habit',
       habit: habit
     })
   })
@@ -100,6 +103,7 @@ function newCueLog(req,res){
   .then(habit=> {
     res.render('break-habits/new-cue', {
       title: "Step 3: Isolate the Cue",
+      nav: 'break habit',
       habit: habit
     })
   })

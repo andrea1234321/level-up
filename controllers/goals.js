@@ -7,6 +7,7 @@ function index(req,res){
   .then(goals=> {
     res.render('goals/index', {
       title: 'Current Goals',
+      nav: 'goals',
       goals: goals.sort((a,b)=> a.deadline-b.deadline)
     })
   })
@@ -20,6 +21,7 @@ function newGoal(req,res){
   const todaysDate= new Date().toISOString().slice(0, 10)
   res.render('goals/new', {
     title: "New Goal",
+    nav: 'goals',
     todaysDate
   })
 }
@@ -70,6 +72,7 @@ function show(req,res){
     let goalDeadline= moment(date + ' ' + time).format("llll").slice(0,17)
     res.render('goals/show', {
       title: goal.title,
+      nav: 'goals',
       goal: goal,
       goalDeadline
     })
@@ -86,6 +89,7 @@ function edit(req,res){
   .then(goal=> {
     res.render('goals/edit', {
       title: "Edit Goal",
+      nav: 'goals',
       goal: goal,
       todaysDate
     })
@@ -116,6 +120,7 @@ function newCheckIn(req,res){
     let goalDeadline= moment(date + ' ' + time).format("llll").slice(0,17)
     res.render('goals/check-in', {
       title: 'Check-In',
+      nav: 'goals',
       goal: goal,
       todaysDate,
       goalDeadline

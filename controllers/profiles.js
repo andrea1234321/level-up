@@ -7,6 +7,7 @@ function index(req, res) {
     .then(userProfile=> {
       res.render('profiles/index', {
         profiles: profiles,
+        nav: 'profiles',
         userProfile,
         title: 'Friends'
       })
@@ -116,6 +117,7 @@ function show(req,res){
     res.render('profiles/show', {
       friendProfile: friendProfile,
       title: friendProfile.name,
+      nav: 'profiles',
     })
   })
   .catch(err=> {
