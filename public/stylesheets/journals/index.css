@@ -2,7 +2,7 @@ form:nth-child(even){
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(233, 196,106,.3);
+  background-color: rgba(245, 217,147,.3);
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 35px;
@@ -15,7 +15,7 @@ form:nth-child(odd){
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(233, 196,106,.15);
+  background-color: rgba(245, 217,147,.13);
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 35px;
@@ -43,7 +43,7 @@ form:nth-child(odd){
   margin-top: 25px;
 }
 button{
-  background-color: #e9c46a;
+  background-color: #f5d993;
   color: #193540;
 }
 button:hover{
