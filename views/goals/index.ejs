@@ -18,28 +18,28 @@
       </thead>
       <tbody>
         <% goals.forEach(goal => { %>
-         <tr>
-           <!-- <td>
-             <input type="checkbox">
-           </td> -->
-           <td><%= goal.category %></td>
-           <td><%= goal.title %></td>
-           <td><%= goal.deadline.toISOString().slice(5, 10)%>-<%= goal.deadline.toISOString().slice(0, 4)%></td>
-           <td>
-            <a href="/goals/<%= goal._id %>">
-              <button>Details</button>
-            </a>
-          </td>
-          <td>
-            <a href="/goals/<%= goal._id %>/checkIn/new">
-              <button>Check-In</button>
-            </a>
-          </td>
-          <td>
-            <form action="/goals/<%= goal._id %>/?_method=DELETE" method="POST">
-              <button>X</button>
-            </form>
-          </td>
+          <tr>
+            <!-- <td>
+              <input type="checkbox">
+            </td> -->
+            <td><%= goal.category %></td>
+            <td><%= goal.title %></td>
+            <td><%= goal.deadline.toISOString().slice(5, 10)%>-<%= goal.deadline.toISOString().slice(0, 4)%></td>
+            <td>
+              <a href="/goals/<%= goal._id %>">
+                <button>Details</button>
+              </a>
+            </td>
+            <td>
+              <a href="/goals/<%= goal._id %>/checkIn/new">
+                <button>Check-In</button>
+              </a>
+            </td>
+            <td>
+              <form action="/goals/<%= goal._id %>/?_method=DELETE" method="POST">
+                <button>X</button>
+              </form>
+            </td>
          </tr>
         <% }) %>
       </tbody>
@@ -48,27 +48,5 @@
   <a href="/goals/new">
     <button class="new-goal-btn">Create new goal</button>
   </a>
-  <div class="goal-card-container">
-    <% goals.forEach(goal => { %>
-      <a href="/goals/<%= goal._id %>">
-        <div class="goal-card">
-          <p><%= goal.title %></p>
-          <p><%= goal.category %></p>
-          <p><%= goal.deadline.toISOString().slice(5, 10)%>-<%= goal.deadline.toISOString().slice(0, 4) %></p>
-          <a href="/goals/<%= goal._id %>/checkIn/new">
-            <button>Check-In</button>
-          </a>
-          <form action="/goals/<%= goal._id %>/?_method=DELETE" method="POST">
-            <button>X</button>
-          </form>
-        </div>
-      </a>
-     <% }) %>
-  </div>
 </main>
-<!-- <script>
-  function sortFunction(){
-    goals.sort((a,b)=> a.category-b.category)
-  }
-</script> -->
 <%- include('../partials/footer') %>

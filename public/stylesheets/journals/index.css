@@ -1,7 +1,27 @@
-form{
+form:nth-child(even){
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: rgba(233, 196,106,.3);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 35px;
+  padding-left: 25px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+form:nth-child(odd){
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(233, 196,106,.15);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 35px;
+  padding-left: 25px;
+  border-radius: 25px;
+  margin: 10px;
 }
 
 .journal-content{
@@ -21,4 +41,11 @@ form{
 
 .new-journal-btn{
   margin-top: 25px;
+}
+button{
+  background-color: #e9c46a;
+  color: #193540;
+}
+button:hover{
+  color: white
 }

@@ -45,19 +45,7 @@ button{
 .new-goal-btn{
   margin-top: 25px;
 }
-.goal-card-container{
-  display: flex;
-  flex-direction: row;
-}
-.goal-card{
-  background-color: rgba(36,131,120,.3);
-  padding: 20px;
-  border-radius: 20px;
-  border: 1px solid #18323c;
-  height: 250px;
-  width: 200px;
-  margin: 15px;
-}
+
 a{
   text-decoration: none;
   color:#18323c;
