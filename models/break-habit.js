@@ -2,13 +2,13 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-// const isolateCueSchema= new Schema({
-//   location: String,
-//   time: String,
-//   emotionalState: String,
-//   otherPeople: String,
-//   preceedingAction: String
-// })
+const isolateCueSchema= new Schema({
+  location: String,
+  time: String,
+  emotionalState: String,
+  otherPeople: String,
+  preceedingAction: String
+})
 
 const possibleRewardsSchema= new Schema({
   reward: String,
@@ -20,7 +20,7 @@ const breakHabitSchema = new Schema({
   cue: String,
   reward: String,
   possibleRewards: [possibleRewardsSchema],
-  // isolateCue: [isolateCueSchema],
+  isolateCue: [isolateCueSchema],
   // actionPlan: String,
   owner: { type: Schema.Types.ObjectId, ref: 'Profile' },
 }, {

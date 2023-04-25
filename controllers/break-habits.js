@@ -95,11 +95,26 @@ function createPossibleReward(req,res){
   })
 }
 
+function newCue(req,res){
+  BreakHabit.findById(req.params.breakHabitId)
+  .then(habit=> {
+    res.render('break-habits/new-cue', {
+      title: "Step 3: Isolate the Cue",
+      habit: habit
+    })
+  })
+  .catch(err=> {
+    console.log(err)
+    res.redirect('/break-habits')
+  })
+}
+
 export{
   index,
   newHabitToStop as new,
   create,
   show,
   newPossibleReward,
-  createPossibleReward
+  createPossibleReward,
+  newCue
 }

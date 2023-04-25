@@ -1,0 +1,24 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <label>Where are you?
+    <input type="text" name="location" required>
+  </label>
+  <label>What time is it?
+    <input type="text" name=" time">
+  </label>
+  <label>What is your current emotional state?
+    <input type="text" name="emotionalState">
+  </label>
+  <label>Who else is around?
+    <input type="text" name="otherPeople">
+  </label>
+  <label>What were you doing immediately before the urge?
+    <input type="text" name="preceedingAction">
+  </label>
+  <button>submit</button>
+</main>
+
+<%- include('../partials/footer') %>
