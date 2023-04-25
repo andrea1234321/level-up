@@ -18,7 +18,8 @@ function index(req,res){
 
 function newHabitToStop(req,res){
   res.render('break-habits/new', {
-    title: 'Habit to break'
+    title: 'Habit to break',
+    nav: 'break habit',
   })
 }
 

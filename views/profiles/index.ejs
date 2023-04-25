@@ -14,7 +14,8 @@
         >
         <h3><%= profile.name %></h3>
         <%if (userProfile.outgoingFriendRequests.includes(profile._id)) { %>
-         <button>Pending</button>
+          <button>Pending</button>
+        </div>
         <%} else if (userProfile.incomingFriendRequests.includes(profile._id)) { %>
           <p>sent you a friend request</p>
           <form action="/profiles/<%= profile._id %>/acceptFriend" method="POST">
@@ -32,7 +33,6 @@
         <form action="/profiles/<%= profile._id %>/requestFriend" method="POST">
           <button>Send friend request</button>
         </form>
-      </div>
       <% } %>
     <% } %>
   <% }) %>

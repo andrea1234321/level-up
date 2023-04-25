@@ -13,7 +13,7 @@ html {
 
 body {
   background-color: #ffffff;
-  color: #18323c;
+  color: #1f4250;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
@@ -21,7 +21,7 @@ body {
 }
 
 nav {
-  background-color: #18323c;
+  background-color: #1f4250;
   display: flex;
   align-items: center;
   padding: 10px;
@@ -41,37 +41,40 @@ nav {
 
 #goals-link:hover{
   background-color: #248378;
-  color: #ffffff;
 }
 #journal-link:hover{
   background-color: #e9c46a;
-  /* color: #264653; */
+  color: #193540;
 }
 #break-habit-link:hover{
   background-color: #56b2c9;
-  /* color: #264653; */
+  color: #193540;
 }
 #add-friend-link:hover{
   background-color: #e76f5a;
-  /* color: #264653; */
+  color: #172b34;
 }
 .nav-links-container>a.active-goal{
   background-color: #248378;
+  color: #ffffff;
   padding: 10px;
   border-radius: 5px;
 }
 .nav-links-container>a.active-journal{
   background-color: #e9c46a;
+  color: #193540;
   padding: 10px;
   border-radius: 5px;
 }
 .nav-links-container>a.active-habit{
   background-color: #56b2c9;
+  color: #193540;
   padding: 10px;
   border-radius: 5px;
 }
 .nav-links-container>a.active-profiles{
   background-color: #e76f5a;
+  color: #172b34;
   padding: 10px;
   border-radius: 5px;
 }
@@ -124,7 +127,7 @@ button{
 
 button:hover{
   cursor: pointer;
-  background-color: #264653;
+  background-color: #1f4250;
   box-shadow: 0 0 6px black;
 }
 

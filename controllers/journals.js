@@ -19,6 +19,7 @@ function index(req,res){
 
 function newJournal(req,res){
   res.render('journals/new', {
+    nav: 'journals',
     title: 'New Entry'
   })
 }
