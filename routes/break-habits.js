@@ -7,6 +7,7 @@ const router = Router()
 router.get('/', isLoggedIn, breakHabitsCtrl.index)
 router.get('/new', isLoggedIn, breakHabitsCtrl.new)
 router.get('/:breakHabitId', isLoggedIn, breakHabitsCtrl.show)
+router.get('/:breakHabitId/possible-rewards/new', isLoggedIn, breakHabitsCtrl.newPossibleReward)
 router.post('/', isLoggedIn, breakHabitsCtrl.create)
 
 export {

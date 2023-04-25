@@ -4,14 +4,14 @@
 <main>
   <h1><%= title %></h1>
   <p>I want to:</p>
-  <a href="/breakHabits/new">
+  <a href="/break-habits/new">
     <button>Break a habit</button>
   </a>
   <% habits.forEach(habit => { %>
    <p>Habit to stop:
     <%= habit.routine %> 
    </p>
-   <a href="/breakHabits/<%= habit._id %>">
+   <a href="/break-habits/<%= habit._id %>">
     <button>Details</button>
   </a>
   <% }) %>

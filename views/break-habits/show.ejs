@@ -10,7 +10,9 @@
     <li>Identify the cue <%= habit.cue %></li>
     <li>Have an action plan</li>
   </ol>
-  <button>Identify the reward</button>
+  <a href="/break-habits/<%= habit._id %>/possible-rewards/new">
+    <button>Track possible rewards</button>
+  </a>
   <button>Identify the cue</button>
 </main>
 <%- include('../partials/footer') %>

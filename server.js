@@ -68,7 +68,7 @@ app.use('/auth', authRouter)
 app.use('/goals', goalsRouter)
 app.use('/journals', journalsRouter)
 app.use('/profiles', profilesRouter)
-app.use('/breakHabits', breakHabitsRouter)
+app.use('/break-habits', breakHabitsRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

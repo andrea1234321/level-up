@@ -30,7 +30,7 @@ function create(req,res){
       profile.breakHabits.push(habit)
       profile.save()
       .then(()=> {
-        res.redirect('/breakHabits')
+        res.redirect('/break-habits')
       })
       .catch(err=> {
         console.log(err)
@@ -62,9 +62,24 @@ function show(req,res){
   })
 }
 
+function newPossibleReward(req,res){
+  BreakHabit.findById(req.params.breakHabitId)
+  .then(habit=> {
+    res.render('break-habits/new-reward', {
+      title: "Step 2: Experiment with Rewards",
+      habit: habit
+    })
+  })
+  .catch(err=> {
+    console.log(err)
+    res.redirect('/break-habits')
+  })
+}
+
 export{
   index,
   newHabitToStop as new,
   create,
-  show
+  show,
+  newPossibleReward
 }
