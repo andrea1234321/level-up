@@ -3,22 +3,25 @@
 
 <main>
   <h1><%= title %></h1>
-  <label>Where are you?
-    <input type="text" name="location" required>
-  </label>
-  <label>What time is it?
-    <input type="text" name=" time">
-  </label>
-  <label>What is your current emotional state?
-    <input type="text" name="emotionalState">
-  </label>
-  <label>Who else is around?
-    <input type="text" name="otherPeople">
-  </label>
-  <label>What were you doing immediately before the urge?
-    <input type="text" name="preceedingAction">
-  </label>
-  <button>submit</button>
+  <p>be specific with your answers</p>
+  <form action="/break-habits/<%= habit._id %>/isolate-cue" method="POST">
+    <label>Where are you?
+      <input type="text" name="location" required>
+    </label>
+    <label>What time is it?
+      <input type="text" name="time" required>
+    </label>
+    <label>What is your current emotional state?
+      <input type="text" name="emotionalState" required>
+    </label>
+    <label>Who else is around?
+      <input type="text" name="otherPeople" required>
+    </label>
+    <label>What were you doing immediately before the urge?
+      <input type="text" name="preceedingAction" required>
+    </label>
+    <button>submit</button>
+  </form>
 </main>
 
 <%- include('../partials/footer') %>

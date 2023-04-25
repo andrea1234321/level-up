@@ -14,15 +14,22 @@
     <button>Track possible rewards</button>
   </a>
   <% habit.possibleRewards.forEach(possibleReward => { %>
-    <p>
+    <p>Reward:
       <%= possibleReward.reward %>
     </p>
-    <p>
+    <p>Notes:
       <%= possibleReward.notes %>  
     </p>
   <% }) %>
   <a href="/break-habits/<%= habit._id %>/isolate-cue/new">
     <button>Isolate the cue</button>
   </a>
+  <% habit.isolateCue.forEach(cueLog => { %>
+    <p>Location: <%= cueLog.location %></p>
+    <p>time: <%= cueLog.time %></p>
+    <p>emotional state: <%= cueLog.emotionalState %></p>
+    <p>Were there people around: <%= cueLog.otherPeople %></p>
+    <p>What happened prior to the urge: <%= cueLog.preceedingAction %></p>
+  <% }) %>
 </main>
 <%- include('../partials/footer') %>

@@ -95,12 +95,31 @@ function createPossibleReward(req,res){
   })
 }
 
-function newCue(req,res){
+function newCueLog(req,res){
   BreakHabit.findById(req.params.breakHabitId)
   .then(habit=> {
     res.render('break-habits/new-cue', {
       title: "Step 3: Isolate the Cue",
       habit: habit
+    })
+  })
+  .catch(err=> {
+    console.log(err)
+    res.redirect('/break-habits')
+  })
+}
+
+function createCueLog(req,res){
+  BreakHabit.findById(req.params.breakHabitId)
+  .then(habit=> {
+    habit.isolateCue.push(req.body)
+    habit.save()
+    .then(()=> {
+      res.redirect(`/break-habits/${habit._id}`)
+    })
+    .catch(err=> {
+      console.log(err)
+      res.redirect('/break-habits')
     })
   })
   .catch(err=> {
@@ -116,5 +135,6 @@ export{
   show,
   newPossibleReward,
   createPossibleReward,
-  newCue
+  newCueLog,
+  createCueLog
 }
