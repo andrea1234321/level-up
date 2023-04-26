@@ -1,5 +1,5 @@
-![Logo](/images/level-up-logo-white-background.png)
-# LevelUp
+![Logo](/public/images/level-up-logo-white-background.png)
+# LevelUp 
 Click [here](https://andrea-level-up.fly.dev) to LevelUp your life  
 Click [here](https://trello.com/b/tSRifbni/unit-2-project) to see the process of creating LevelUp
 
