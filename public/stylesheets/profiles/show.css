@@ -38,7 +38,9 @@ button{
   background-color: #e76f5a;
   color: #172b34;
 }
-
+button:hover{
+  color: white;
+}
 .new-goal-btn{
   margin-top: 25px;
 }
