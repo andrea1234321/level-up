@@ -13,7 +13,6 @@
           <th>Deadline</th>
           <th></th>
           <th></th>
-          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -34,11 +33,6 @@
               <a href="/goals/<%= goal._id %>/checkIn/new">
                 <button>Check-In</button>
               </a>
-            </td>
-            <td>
-              <form action="/goals/<%= goal._id %>/?_method=DELETE" method="POST">
-                <button>X</button>
-              </form>
             </td>
          </tr>
         <% }) %>

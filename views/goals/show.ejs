@@ -3,27 +3,35 @@
 <%- include('../partials/nav') %>
 
 <main>
+  <div class="dropdown-container">
+    <div class="dropdown">
+      <div class="dropdown-div">...</div>
+        <div class="dropdown-content">
+          <a href="/goals/<%= goal._id %>/checkIn/new">
+            <button class="hover-btn">Check-In</button>
+          </a>
+          <a href="/goals/<%= goal._id %>/edit">
+            <button class="hover-btn">Edit Goal</button>
+          </a>
+          <form action="/goals/<%= goal._id %>/?_method=DELETE" method="POST">
+          <button class="hover-btn">Delete Goal</button>
+        </form>
+      </div>
+    </div>
+  </div>
   <h2><%= goal.category %> Goal:</h2>
   <h1><%= title %></h1>
-  <p>Deadline is on <%= goalDeadline%></p>
+  <p class="deadline">Deadline is on <%= goalDeadline%></p>
   <p class="goal-content-header">Details: </p>
   <p class="goal-content"><%= goal.content %></p>
-  <a href="/goals/<%= goal._id %>/edit">
-    <button>Edit Goal</button>
-  </a>
   <h2 class="checkin-header">Check-Ins</h2>
   <% goal.checkIns.forEach(checkIn => { %>
-    <form action="/goals/<%= goal._id %>/checkIn/<%= checkIn._id %>?_method=DELETE" method="POST">
-      <div class="checkin-container">
-        <p class="checkin-date"><%= checkIn.date.toISOString().slice(5,10) %>-<%= checkIn.date.toISOString().slice(0,4) %>:</p>
-        <p class="checkin-content"><%= checkIn.notes %></p>
-        <button>X</button>
-      </div>
+    <form action="/goals/<%= goal._id %>/checkIn/<%= checkIn._id %>?_method=DELETE" method="POST" class="checkin-container">
+      <p class="checkin-date"><%= checkIn.date.toISOString().slice(5,10) %>-<%= checkIn.date.toISOString().slice(0,4) %>:</p>
+      <p class="checkin-content"><%= checkIn.notes %></p>
+      <button>X</button>
     </form>
   <% }) %>
-  <a href="/goals/<%= goal._id %>/checkIn/new">
-    <button>Check-In</button>
-  </a>
 </main>
 
 

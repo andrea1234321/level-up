@@ -1,3 +1,10 @@
+.delete{
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  margin-right: 25px;
+  margin-top: -10px;
+ }
 h1{
   margin-top: 0;
   margin-bottom: 10px;
@@ -6,7 +13,7 @@ h2{
   margin-bottom: 5px;;
 }
 
-p{
+.deadline{
   margin-top: 5px;
 }
 
@@ -21,20 +28,81 @@ p{
 .checkin-header{
   margin-top: 60px;
 }
-.checkin-container{
+.checkin-container:nth-child(odd){
+  background-color: rgba(36,131,120,.3);
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 35px;
+  padding-left: 25px;
+  border-radius: 10px;
+  margin: 5px;
 }
-
+.checkin-container:nth-child(even){
+  background-color: rgba(36,131,120,.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 35px;
+  padding-left: 25px;
+  border-radius: 10px;
+  margin: 5px;
+}
 .checkin-content{
   margin-left: 25px;
   margin-right: 25px;
   text-align: left;
 }
 
-.checkin-date{
-  margin-bottom: 0;
-}
 button{
   background-color: #248378;
 }
+.dropdown-container{
+  display: flex;
+  width: 100%;
+  justify-content: right;
+  margin-right: 25px;
+  margin-top: -10px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  text-align: right;
+}
+
+.dropdown-div {
+  padding: 5px 10px 5px 10px;
+  background-color: #248378;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 0;
+}
+.hover-btn{
+  border-radius: 0;
+  width: 100%;
+  background-color: white;
+  color: #1f4250;
+}
+.hover-btn:hover{
+  color: white;
+  background-color: #248378;
+  box-shadow: none;
+}
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+
