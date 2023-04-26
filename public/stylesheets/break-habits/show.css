@@ -1,0 +1,50 @@
+.instructions{
+  width: 500px;
+  margin-bottom: 50px;
+}
+.rewards-cue-container{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+button{
+  background-color: #75d0e7;
+  color: #193540;
+}
+
+button:hover{
+  color: white;
+}
+.rewards-container, .cues-container{
+  width: 45%
+}
+
+.rewards-btn, .cues-btn{
+  margin-bottom: 10px;
+}
+.rewards-body, .cues-body{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.rewards{
+  background-color: rgba(117,208,231,.3);
+  border-radius: 15px;
+  margin: 5px;
+  padding: 5px 10px;
+  height: fit-content;
+  width: 150px;
+}
+.cues{
+  background-color: rgba(117,208,231,.3);
+  border-radius: 15px;
+  margin: 5px;
+  padding: 5px 10px;
+  height: fit-content;
+  width: 300px;
+  text-align: left;
+  padding-left: 25px;
+}

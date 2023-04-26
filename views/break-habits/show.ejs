@@ -1,35 +1,48 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/break-habits/show.css">
 <%- include('../partials/nav') %>
 
 <main>
-  <h1><%= title %></h1>
-  <p>Breaking a habit is a 4 step process. We have identified the routine as being <%= habit.routine %>, now we move on to step 2 and 3</p>
-  <ol>
-    <li><strong>Identify the routine:</strong> <%= habit.routine %></li>
-    <li>Identify the reward <%= habit.reward %></li>
-    <li>Identify the cue <%= habit.cue %></li>
-    <li>Have an action plan</li>
-  </ol>
-  <a href="/break-habits/<%= habit._id %>/possible-rewards/new">
-    <button>Track possible rewards</button>
-  </a>
-  <% habit.possibleRewards.forEach(possibleReward => { %>
-    <p>Reward:
-      <%= possibleReward.reward %>
-    </p>
-    <p>Notes:
-      <%= possibleReward.notes %>  
-    </p>
-  <% }) %>
-  <a href="/break-habits/<%= habit._id %>/isolate-cue/new">
-    <button>Isolate the cue</button>
-  </a>
-  <% habit.isolateCue.forEach(cueLog => { %>
-    <p>Location: <%= cueLog.location %></p>
-    <p>time: <%= cueLog.time %></p>
-    <p>emotional state: <%= cueLog.emotionalState %></p>
-    <p>Were there people around: <%= cueLog.otherPeople %></p>
-    <p>What happened prior to the urge: <%= cueLog.preceedingAction %></p>
-  <% }) %>
+  <h1>Routine: <%= title %></h1>
+  <p class="instructions">Now that you have identified the routine, its time to figure out what your cue is and track the possible rewards</p>
+  <div class="rewards-cue-container">
+    <div class="cues-container">
+      <div class="cues-btn">
+        <a href="/break-habits/<%= habit._id %>/isolate-cue/new">
+          <button>Isolate the cue</button>
+        </a>
+      </div>
+      <div class="cues-body">
+        <% habit.isolateCue.forEach(cueLog => { %>
+          <div class="cues">
+            <p>Location: <%= cueLog.location %></p>
+            <p>time: <%= cueLog.time %></p>
+            <p>emotional state: <%= cueLog.emotionalState %></p>
+            <p>Were there people around: <%= cueLog.otherPeople %></p>
+            <p>What happened prior to the urge: <%= cueLog.preceedingAction %></p>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+    <div class="rewards-container">
+      <div class="rewards-btn">
+        <a href="/break-habits/<%= habit._id %>/possible-rewards/new">
+          <button>Track possible rewards</button>
+        </a>
+      </div>
+      <div class="rewards-body">
+        <% habit.possibleRewards.forEach(possibleReward => { %>
+          <div class="rewards">
+            <p>Reward:
+              <%= possibleReward.reward %>
+            </p>
+            <p>Notes:
+              <%= possibleReward.notes %>  
+            </p>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  </div>
 </main>
 <%- include('../partials/footer') %>
