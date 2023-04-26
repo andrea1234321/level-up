@@ -144,16 +144,17 @@ function update(req,res){
   })
 }
 
-// function update(req,res){
-//   Goal.findByIdAndUpdate(req.params.goalId, req.body, {new: true})
-//   .then(goal=> {
-//     res.redirect(`/goals/${goal._id}`)
-//   })
-//   .catch(err=> {
-//     console.log(err)
-//     res.redirect('/goals')
-//   })
-// }
+function deleteBadHabit(req,res){
+  BreakHabit.findByIdAndDelete(req.params.breakHabitId)
+  .then(()=> {
+    res.redirect('/break-habits')
+  })
+  .catch(err=> {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 
 export{
   index,
@@ -164,5 +165,6 @@ export{
   createPossibleReward,
   newCueLog,
   createCueLog,
-  update
+  update,
+  deleteBadHabit as delete
 }

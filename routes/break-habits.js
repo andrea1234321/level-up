@@ -13,6 +13,7 @@ router.post('/', isLoggedIn, breakHabitsCtrl.create)
 router.post('/:breakHabitId/possible-rewards', isLoggedIn, breakHabitsCtrl.createPossibleReward)
 router.post('/:breakHabitId/isolate-cue', isLoggedIn, breakHabitsCtrl.createCueLog)
 router.patch('/:breakHabitId', isLoggedIn, breakHabitsCtrl.update)
+router.delete('/:breakHabitId', isLoggedIn, breakHabitsCtrl.delete)
 
 export {
   router

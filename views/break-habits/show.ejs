@@ -3,6 +3,11 @@
 <%- include('../partials/nav') %>
 
 <main>
+  <div class="delete">
+    <form action="/break-habits/<%= habit._id %>?_method=DELETE"method="POST">
+      <button>Delete Habit</button>
+    </form>
+  </div>
   <h1>Habit to stop: <%= title %></h1>
   <p class="instructions">Now that you have identified the routine, its time to figure out what your cue is and track the possible rewards</p>
   <div class="rewards-cue-container">
