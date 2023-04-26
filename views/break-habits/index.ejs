@@ -1,20 +1,43 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/break-habits/index.css">
 <%- include('../partials/nav') %>
 
 <main>
+  <div class="dropdown-container">
+    <div class="dropdown">
+      <button class="dropdown-btn">?</button>
+      <div class="dropdown-content">
+        <h1>
+          The Habit Loop
+        </h1>
+        <p>Habits are easy to change once you know about the habit loop.</p>
+        <div class="habit-loop">
+          <img src="/images/HabitLoop.png" alt="habitloop">
+          <div class="habit-loop-info">
+            <ul>
+              <p>Every habit has a cue, routine, and reward </p> 
+              <li>Cue: the signal that initializes your routine </li>
+              <li>Routine: the habit itself</li>
+              <li>Reward: the feedback we get from performing the habit</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <h1><%= title %></h1>
-  <p>I want to:</p>
+  <div class="bad-habit-container">
+    <% habits.forEach(habit => { %>
+      <a href="/break-habits/<%= habit._id %>">
+        <div class="bad-habit-content">
+      <%= habit.routine %> 
+      </a>
+    </div>
+    <% }) %>
+  </div>
   <a href="/break-habits/new">
-    <button>Break a habit</button>
+    <button>Stop a bad habit</button>
   </a>
-  <% habits.forEach(habit => { %>
-   <p>Habit to stop:
-    <%= habit.routine %> 
-   </p>
-   <a href="/break-habits/<%= habit._id %>">
-    <button>Details</button>
-  </a>
-  <% }) %>
 </main>
 
 <%- include('../partials/footer') %>

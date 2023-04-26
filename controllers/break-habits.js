@@ -5,7 +5,7 @@ function index(req,res){
   BreakHabit.find({owner: req.user.profile._id})
   .then(habits=> {
     res.render('break-habits/index', {
-      title: 'Break Habits',
+      title: 'Habits I want to stop',
       nav: 'break habit',
       habits: habits
     })
