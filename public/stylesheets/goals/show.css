@@ -28,7 +28,7 @@ h2{
 .checkin-header{
   margin-top: 60px;
 }
-.checkin-container:nth-child(odd){
+.checkin-container:nth-child(even){
   background-color: rgba(36,131,120,.3);
   display: flex;
   justify-content: space-between;
@@ -40,7 +40,7 @@ h2{
   border-radius: 10px;
   margin: 5px;
 }
-.checkin-container:nth-child(even){
+.checkin-container:nth-child(odd){
   background-color: rgba(36,131,120,.1);
   display: flex;
   justify-content: space-between;

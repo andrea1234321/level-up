@@ -3,10 +3,10 @@
 <%- include('../partials/nav') %>
 
 <main>
+  <div class="container">
   <% profiles.forEach(profile => { %>
     <% if (userProfile.equals(profile._id)) { %>
     <% } else { %>
-      <div class="container">
         <%if (userProfile.outgoingFriendRequests.includes(profile._id)) { %>
           <div class="profile-card">
             <img 
@@ -74,10 +74,10 @@
             <button>Send friend request</button>
           </div>
         </form>
-      </div>
+        <% } %>
       <% } %>
-    <% } %>
-  <% }) %>
+    <% }) %>
+  </div>
 </main>
 
 <%- include('../partials/footer') %>
