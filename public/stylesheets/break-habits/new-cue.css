@@ -1,0 +1,29 @@
+.container{
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: center;
+  width: 500px;
+}
+
+label{
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+textarea{
+  padding: 10px;
+  margin-left: 60px;
+}
+button{
+  width: fit-content;
+  margin: 0 auto;
+  background-color: #75d0e7;
+  color: #193540;
+}
+
+button:hover{
+  color: white;
+}

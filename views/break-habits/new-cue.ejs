@@ -1,26 +1,29 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/break-habits/new-cue.css">
 <%- include('../partials/nav') %>
 
 <main>
   <h1><%= title %></h1>
-  <p>be specific with your answers</p>
+  <p>Be specific with your answers</p>
   <form action="/break-habits/<%= habit._id %>/isolate-cue" method="POST">
-    <label>Where are you?
-      <input type="text" name="location" required>
-    </label>
-    <label>What time is it?
-      <input type="text" name="time" required>
-    </label>
-    <label>What is your current emotional state?
-      <input type="text" name="emotionalState" required>
-    </label>
-    <label>Who else is around?
-      <input type="text" name="otherPeople" required>
-    </label>
-    <label>What were you doing immediately before the urge?
-      <input type="text" name="preceedingAction" required>
-    </label>
-    <button>submit</button>
+    <div class="container">
+      <label>Where are you?
+        <input type="text" name="location" required autocomplete="off">
+      </label>
+      <label>What time is it?
+        <input type="text" name="time" required autocomplete="off">
+      </label>
+      <label>What is your current emotional state?
+        <input type="text" name="emotionalState" required autocomplete="off">
+      </label>
+      <label>Who else is around?
+        <input type="text" name="otherPeople" required autocomplete="off">
+      </label>
+      <label>What were you doing immediately before the urge?
+        <textarea name="preceedingAction" cols="30" rows="3" required autocomplete="off"></textarea>
+      </label>
+      <button>submit</button>
+    </div>
   </form>
 </main>
 

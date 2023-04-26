@@ -23,6 +23,12 @@
           </div>
         <% }) %>
       </div>
+        <% if (habit.isolateCue.length>1) { %>
+          <label>I've found my cue
+            <input type="text" placeholder="cue" name="cue">
+          </label>
+          <button>Submit my Cue!</button>
+        <% } %>
     </div>
     <div class="rewards-container">
       <div class="rewards-btn">
@@ -42,6 +48,12 @@
           </div>
         <% }) %>
       </div>
+        <% if (habit.possibleRewards.length>1) { %>
+          <label>I've found my reward
+            <input type="text" placeholder="reward" name="reward">
+          </label>
+          <button>Submit my Reward!</button>
+        <% } %>
     </div>
   </div>
 </main>
