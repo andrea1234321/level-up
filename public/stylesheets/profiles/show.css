@@ -1,7 +1,4 @@
 .goals-container{
-  /* background-color: rgba(36,131,120,.3);
-  padding: 20px;
-  border-radius: 20px; */
   width: 95%;
   display: flex;
   justify-content: center;
@@ -14,7 +11,6 @@ table{
 }
 
 tr{
-  /* border-bottom: 1px solid #18323c; */
   text-align: center;
 }
 thead{
@@ -22,11 +18,11 @@ thead{
 }
 
 tbody tr:nth-child(odd){
-  background-color: rgba(36,131,120,.3);
+  background-color: rgba(231,111,90,.3);
 }
 
 tbody tr:nth-child(even){
-  background-color: rgba(36,131,120,.1);
+  background-color: rgba(231,111,90,.1);
 }
 
 th{
@@ -39,7 +35,8 @@ td{
 }
 
 button{
-  background-color: #21776d;
+  background-color: #e76f5a;
+  color: #172b34;
 }
 
 .new-goal-btn{

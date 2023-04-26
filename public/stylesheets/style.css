@@ -45,7 +45,7 @@ nav {
 }
 
 #goals-link:hover{
-  background-color: #248378;
+  background-color: #21776d;
 }
 #journal-link:hover{
   background-color: #f5d993;
@@ -60,7 +60,7 @@ nav {
   color: #172b34;
 }
 .nav-links-container>a.active-goal{
-  background-color: #248378;
+  background-color: #21776d;
   color: #ffffff;
   padding: 10px;
   border-radius: 5px;

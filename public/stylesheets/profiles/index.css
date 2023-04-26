@@ -18,7 +18,7 @@ main{
 .profile-card{
   display: flex;
   flex-direction: column;
-  border: 2px solid #e76f5a;
+  border: 2px solid #172b34;
   border-radius: 10px;
   padding: 10px;
   margin: 25px;
@@ -26,7 +26,7 @@ main{
   width: 190px;
   height: fit-content;
   align-items: center;
-  background-color: rgba(231,111,90,.2);
+  background-color: rgba(231,111,90,.1);
 }
 button{
   background-color: #e76f5a;
@@ -34,4 +34,15 @@ button{
 }
 button:hover{
   color: white
+}
+.blue-btn{
+  background-color: #172b34;
+  color: white;
+}
+#accept-btn{
+  margin-bottom: 5px;
+}
+#friends{
+  border: 2px solid #e76f5a;
+  background-color: rgba(231,111,90,.2);
 }
