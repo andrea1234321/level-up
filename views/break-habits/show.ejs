@@ -23,12 +23,14 @@
           </div>
         <% }) %>
       </div>
-        <% if (habit.isolateCue.length>1) { %>
-          <label>I've found my cue
+      <div class="submit-cue">
+        <% if (habit.isolateCue.length>1 && !habit.cue) { %>
+          <form action="/break-habits/<%= habit._id %>?_method=PATCH" method="POST">
             <input type="text" placeholder="cue" name="cue">
-          </label>
-          <button>Submit my Cue!</button>
+            <button>Submit my Cue!</button>
+          </form>
         <% } %>
+      </div>
     </div>
     <div class="rewards-container">
       <div class="rewards-btn">
@@ -48,13 +50,21 @@
           </div>
         <% }) %>
       </div>
-        <% if (habit.possibleRewards.length>1) { %>
-          <label>I've found my reward
+      <div class="submit-reward">
+        <% if (habit.possibleRewards.length>1 && !habit.reward) { %>
+          <form action="/break-habits/<%= habit._id %>?_method=PATCH" method="POST">
             <input type="text" placeholder="reward" name="reward">
-          </label>
-          <button>Submit my Reward!</button>
+            <button>Submit my Reward!</button>
+          </form>
         <% } %>
+      </div>
     </div>
+  </div>
+  <div class="habit-loop">
+    <% if (habit.cue || habit.reward) { %>
+      <h2>Your habit loop</h2>
+      <p>Cue: <%= habit.cue %> -> Routine: <%= habit.routine %> -> Reward: <%= habit.reward %></p>
+    <% } %>
   </div>
 </main>
 <%- include('../partials/footer') %>

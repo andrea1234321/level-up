@@ -133,6 +133,28 @@ function createCueLog(req,res){
   })
 }
 
+function update(req,res){
+  BreakHabit.findByIdAndUpdate(req.params.breakHabitId, req.body, {new:true})
+  .then(habit=> {
+    res.redirect(`/break-habits/${habit._id}`)
+  })
+  .catch(err=> {
+    console.log(err)
+    res.redirect('/break-habits')
+  })
+}
+
+// function update(req,res){
+//   Goal.findByIdAndUpdate(req.params.goalId, req.body, {new: true})
+//   .then(goal=> {
+//     res.redirect(`/goals/${goal._id}`)
+//   })
+//   .catch(err=> {
+//     console.log(err)
+//     res.redirect('/goals')
+//   })
+// }
+
 export{
   index,
   newHabitToStop as new,
@@ -141,5 +163,6 @@ export{
   newPossibleReward,
   createPossibleReward,
   newCueLog,
-  createCueLog
+  createCueLog,
+  update
 }
