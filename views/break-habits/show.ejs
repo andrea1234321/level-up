@@ -3,7 +3,7 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>Routine: <%= title %></h1>
+  <h1>Habit to stop: <%= title %></h1>
   <p class="instructions">Now that you have identified the routine, its time to figure out what your cue is and track the possible rewards</p>
   <div class="rewards-cue-container">
     <div class="cues-container">
@@ -62,9 +62,21 @@
   </div>
   <div class="habit-loop">
     <% if (habit.cue || habit.reward) { %>
-      <h2>Your habit loop</h2>
+      <h2>Your current habit loop</h2>
       <p>Cue: <%= habit.cue %> -> Routine: <%= habit.routine %> -> Reward: <%= habit.reward %></p>
     <% } %>
   </div>
+  <% if (habit.cue && habit.reward  && !habit.routine) { %>
+    <p>Great! Now that you know your habit loop, we can work on changing the routine.</p>
+    <p>Think of an alternative behavior that you can do on your cue, that will give you the same reward.</p>
+    <form action="/break-habits/<%= habit._id %>?_method=PATCH" method="POST">
+      <input type="text" name="newRoutine" placeholder="type your new routine" required autocomplete="off">
+      <button>Submit</button>
+    </form>
+  <% } %>
+  <% if (habit.newRoutine) { %>
+    <h2>Your new habit loop</h2>
+    <p>Cue: <%= habit.cue %> -> Routine: <%= habit.newRoutine %> -> Reward: <%= habit.reward %></p>
+  <% } %>
 </main>
 <%- include('../partials/footer') %>

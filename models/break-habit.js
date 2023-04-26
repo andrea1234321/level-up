@@ -21,7 +21,7 @@ const breakHabitSchema = new Schema({
   reward: String,
   possibleRewards: [possibleRewardsSchema],
   isolateCue: [isolateCueSchema],
-  // actionPlan: String,
+  newRoutine: String,
   owner: { type: Schema.Types.ObjectId, ref: 'Profile' },
 }, {
   timestamps: true,
