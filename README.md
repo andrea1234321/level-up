@@ -25,6 +25,7 @@ LevelUp allows you to set specific goals and check in on them regularly so that 
 
 ## Attributions 
 * Date Library: [MomentJS](https://momentjs.com/)
+* Animation Library: [Animate.css](https://animate.style/)
 
 ## Next Steps
-- [ ] Add a create new habit section, that shows step by step how to create a habit successfully
+- [ ] Add a create new habit section, that shows step-by-step how to create a habit successfully
