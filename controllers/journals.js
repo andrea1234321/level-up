@@ -8,7 +8,7 @@ function index(req,res){
     res.render('journals/index', {
       title: 'Journal Entries',
       nav: 'journals',
-      journals: journals,
+      journals: journals.sort((a,b)=> b.date-a.date),
     })
   })
   .catch(err=> {

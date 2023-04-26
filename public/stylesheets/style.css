@@ -158,3 +158,11 @@ button:active{
   width: 500px;
   font-size: 17px;
 }
+.logout-btn{
+  color: white;
+  background-color: #1f4250;
+  font-family: system-ui, 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+.logout-btn:hover{
+  color: white;
+}
