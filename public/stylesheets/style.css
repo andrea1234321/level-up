@@ -26,13 +26,19 @@ nav {
   padding: 10px;
   height: 55px;
 }
-
+.nav-links-container{
+  display: flex;
+}
 .nav-links-container>a{
   text-decoration: none;
   color: #ffffff;
   padding: 10px;
+  margin: 5px;
 }
-
+.logo-container>img{
+  height: 60px;
+  padding: 10px;
+}
 .nav-links-container>a:hover{
   padding: 10px;
   border-radius: 5px;
@@ -136,4 +142,13 @@ button:active{
 
 .journal{
   display: flex;
+}
+.logo{
+  height: 130px;
+  margin-top: -20px;
+}
+.welcome{
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border: none;
 }

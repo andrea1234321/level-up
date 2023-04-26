@@ -49,6 +49,7 @@ a{
 }
 .habit-loop>img{
   height: 300px;
+  margin-bottom: 35px;
 }
 
 .dropdown-content a:hover{
@@ -78,4 +79,9 @@ a{
 }
 ul>p{
   margin-bottom: 10px;
+}
+p{
+  max-width: 500px;
+  margin: 0 auto;
+  margin-bottom: 25px;
 }
