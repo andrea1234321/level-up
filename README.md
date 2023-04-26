@@ -1,4 +1,4 @@
-put screenshot here 
+![Logo](/images/level-up-logo-white-background.png)
 # LevelUp
 Click [here](https://andrea-level-up.fly.dev) to LevelUp your life  
 Click [here](https://trello.com/b/tSRifbni/unit-2-project) to see the process of creating LevelUp
@@ -11,13 +11,15 @@ This quote is the inspiration behind LevelUp. When I first heard this quote, I f
 ## Technology Implemented
 * JavaScript
 * CSS
-* HTML
+* EJS
 * Mongoose
 * MongoDB
 * Node.js
 * Express
 * Git
 * MomentJS
+* Google OAuth
+* Fly.io
 
 ## Attributions 
 * Date Library: [MomentJS](https://momentjs.com/)
