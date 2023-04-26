@@ -1,14 +1,15 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/break-habits/new-reward.css">
 <%- include('../partials/nav') %>
 
 <main>
   <h1><%= title %></h1>
   <form action="/break-habits/<%= habit._id %>/possible-rewards" method="POST">
     <label>Reward: 
-      <input type="text" name="reward" required>
+      <input type="text" name="reward" required autocomplete="off">
     </label>
     <label>Notes:
-      <textarea name="notes" id="" cols="30" rows="10" required placeholder="Write what came to mind immediately after getting this reward, or the first 3 things that popped in your head."></textarea>
+      <textarea name="notes" id="" cols="40" rows="5" required placeholder="Write what came to mind immediately after getting this reward, or the first 3 things that popped in your head." autocomplete="off"></textarea>
     </label>
     <button>Submit</button>
   </form>
