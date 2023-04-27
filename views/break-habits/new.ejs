@@ -1,11 +1,11 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/break-habits/new.css">
 <%- include('../partials/nav') %>
 
 <main>
   <h1><%= title %></h1>
-  <p>Congratulations on taking your first step towards trying to break a habit!</p>
-  <p>Breaking a habit is not easy and will take time, but by recognizing your habit loop the process is much faster.</p>
-  <p>First lets identify the habit you are trying to stop:</p>
+  <p class="instructions">Congratulations on taking your first step towards trying to stop a bad habit! It will take time to change this habit, but if you go through this process to learn your habit loop first, it will be much easier. </p>
+  <p class="instructions">First, identify the habit you are trying to stop:</p>
   <form action="/break-habits" method="POST">
     <label>
       <input type="text" name="routine" autocomplete="off" required>
