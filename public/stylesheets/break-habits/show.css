@@ -1,10 +1,10 @@
-.delete{
+/* .delete{
  width: 100%;
  display: flex;
  justify-content: right;
  margin-right: 25px;
  margin-top: -10px;
-}
+} */
 
 .instructions{
   width: 500px;
@@ -69,3 +69,50 @@ input{
   padding: 5px;
   margin-right: 10px;
 }
+
+.dropdown-container{
+  display: flex;
+  width: 100%;
+  justify-content: right;
+  margin-right: 25px;
+  margin-top: -10px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  text-align: right;
+}
+
+.dropdown-div {
+  padding: 5px 10px 5px 10px;
+  background-color: #75d0e7;
+  color: #264653;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 0;
+}
+.hover-btn{
+  border-radius: 0;
+  width: 100%;
+  color: #264653;
+  background-color: white;
+}
+.hover-btn:hover{
+  color: #193540;
+  background-color: #75d0e7;
+  box-shadow: none;
+}
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+
+

@@ -3,11 +3,23 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <div class="delete">
-    <form action="/break-habits/<%= habit._id %>?_method=DELETE"method="POST">
+  <div class="dropdown-container">
+    <div class="dropdown">
+      <div class="dropdown-div">...</div>
+        <div class="dropdown-content">
+          <button class="hover-btn">Details</button>
+          <button class="hover-btn">Edit</button>
+          <form action="/break-habits/<%= habit._id %>?_method=DELETE"method="POST">
+            <button class="hover-btn">Delete Habit</button>
+          </form>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="delete">
+    <form action="/break-habits/<%# habit._id %>?_method=DELETE"method="POST">
       <button>Delete Habit</button>
     </form>
-  </div>
+  </div> -->
   <h1>Habit to stop: <%= title %></h1>
   <p class="instructions">Now that you have identified the routine, its time to figure out what your cue is and track the possible rewards</p>
   <div class="rewards-cue-container">
@@ -20,11 +32,11 @@
       <div class="cues-body">
         <% habit.isolateCue.forEach(cueLog => { %>
           <div class="cues">
-            <p>Location: <%= cueLog.location %></p>
-            <p>time: <%= cueLog.time %></p>
-            <p>emotional state: <%= cueLog.emotionalState %></p>
-            <p>Were there people around: <%= cueLog.otherPeople %></p>
-            <p>What happened prior to the urge: <%= cueLog.preceedingAction %></p>
+            <p><strong>Location:</strong> <%= cueLog.location %></p>
+            <p><strong>Time:</strong> <%= cueLog.time %></p>
+            <p><strong>Emotional State:</strong> <%= cueLog.emotionalState %></p>
+            <p><strong>Who was around:</strong> <%= cueLog.otherPeople %></p>
+            <p><strong>Preceeding Action:</strong> <%= cueLog.preceedingAction %></p>
           </div>
         <% }) %>
       </div>
@@ -46,10 +58,10 @@
       <div class="rewards-body">
         <% habit.possibleRewards.forEach(possibleReward => { %>
           <div class="rewards">
-            <p>Reward:
+            <p><strong>Reward:</strong>
               <%= possibleReward.reward %>
             </p>
-            <p>Notes:
+            <p><strong>Notes:</strong>
               <%= possibleReward.notes %>  
             </p>
           </div>

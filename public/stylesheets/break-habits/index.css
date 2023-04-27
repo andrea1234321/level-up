@@ -29,8 +29,7 @@ a{
 }
 
 .dropdown {
-  position: relative;
-  display: inline-block;
+  /* position: relative; */
 }
 
 .dropdown-btn {
@@ -43,13 +42,23 @@ a{
   display: none;
   position: absolute;
   background-color: rgb(255, 255, 255);
-  min-width: 900px;
+  max-width: 900px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+}
+.habit-loop{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 80px;
 }
 .habit-loop>img{
   height: 300px;
   margin-bottom: 35px;
+}
+.habit-loop-info{
+  display: flex;
+  text-align: left;
 }
 
 .dropdown-content a:hover{
@@ -66,16 +75,6 @@ a{
 }
 .dropdown-content>h1{
   border: none;
-}
-.habit-loop{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0 80px;
-}
-.habit-loop-info{
-  display: flex;
-  text-align: left;
 }
 ul>p{
   margin-bottom: 10px;
