@@ -136,6 +136,7 @@ function createCueLog(req,res){
 function update(req,res){
   BreakHabit.findByIdAndUpdate(req.params.breakHabitId, req.body, {new:true})
   .then(habit=> {
+    console.log(req.body)
     res.redirect(`/break-habits/${habit._id}`)
   })
   .catch(err=> {

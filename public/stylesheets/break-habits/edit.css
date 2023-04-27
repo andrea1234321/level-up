@@ -21,7 +21,6 @@ label>:nth-child(1){
 }
 .submit-btn{
   width: fit-content;
-  margin: 0 auto;
   margin-top: 20px;
   background-color: #75d0e7;
   color: #193540;
