@@ -166,8 +166,23 @@ function showCueReward(req,res){
   })
   .catch(err=> {
     console.log(err)
-    res.redirect('/break-habit')
+    res.redirect('/break-habits')
   })
+}
+
+function edit(req,res){
+  BreakHabit.findById(req.params.breakHabitId)
+  .then(habit=> {
+    res.render('break-habits/edit', {
+      title: "Edit Habit Loop",
+      nav: 'break habit',
+      habit: habit
+    })
+  })
+  .catch(err=> {
+    console.log(err)
+    res.redirect('/break-habits')
+  }) 
 }
 
 
@@ -182,5 +197,6 @@ export{
   createCueLog,
   update,
   deleteBadHabit as delete,
-  showCueReward
+  showCueReward,
+  edit
 }

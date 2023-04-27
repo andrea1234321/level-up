@@ -7,10 +7,14 @@
     <div class="dropdown">
       <div class="dropdown-div">...</div>
         <div class="dropdown-content">
-          <a href="/break-habits/<%= habit._id %>/cue-reward-show">
-            <button class="hover-btn">Details</button>
-          </a>
-          <button class="hover-btn">Edit</button>
+          <% if (habit.reward && habit.cue) { %>
+            <a href="/break-habits/<%= habit._id %>/cue-reward-show">
+              <button class="hover-btn">Details</button>
+            </a>
+            <a href="/break-habits/<%= habit._id %>/edit">
+              <button class="hover-btn">Edit</button>
+            </a>
+          <% } %>
           <form action="/break-habits/<%= habit._id %>?_method=DELETE"method="POST">
             <button class="hover-btn">Delete Habit</button>
           </form>
@@ -18,62 +22,64 @@
     </div>
   </div>
   <h1>Habit to stop: <%= title %></h1>
-  <p class="instructions">Now that you have identified the routine, its time to figure out what your cue is and track the possible rewards</p>
-  <div class="rewards-cue-container">
-    <div class="cues-container">
-      <div class="cues-btn">
-        <a href="/break-habits/<%= habit._id %>/isolate-cue/new">
-          <button>Isolate the cue</button>
-        </a>
+  <% if (!habit.reward & !habit.cue) { %>
+    <p class="instructions">Now that you have identified the routine, its time to figure out what your cue is and track the possible rewards</p>
+    <div class="rewards-cue-container">
+      <div class="cues-container">
+        <div class="cues-btn">
+          <a href="/break-habits/<%= habit._id %>/isolate-cue/new">
+            <button>Isolate the cue</button>
+          </a>
+        </div>
+        <div class="cues-body">
+          <% habit.isolateCue.forEach(cueLog => { %>
+            <div class="cues">
+              <p><strong>Location:</strong> <%= cueLog.location %></p>
+              <p><strong>Time:</strong> <%= cueLog.time %></p>
+              <p><strong>Emotional State:</strong> <%= cueLog.emotionalState %></p>
+              <p><strong>Who was around:</strong> <%= cueLog.otherPeople %></p>
+              <p><strong>Preceeding Action:</strong> <%= cueLog.preceedingAction %></p>
+            </div>
+          <% }) %>
+        </div>
+        <div class="submit-cue">
+          <% if (habit.isolateCue.length>1 && !habit.cue) { %>
+            <form action="/break-habits/<%= habit._id %>?_method=PATCH" method="POST">
+              <input type="text" placeholder="cue" name="cue">
+              <button>Submit my Cue!</button>
+            </form>
+          <% } %>
+        </div>
       </div>
-      <div class="cues-body">
-        <% habit.isolateCue.forEach(cueLog => { %>
-          <div class="cues">
-            <p><strong>Location:</strong> <%= cueLog.location %></p>
-            <p><strong>Time:</strong> <%= cueLog.time %></p>
-            <p><strong>Emotional State:</strong> <%= cueLog.emotionalState %></p>
-            <p><strong>Who was around:</strong> <%= cueLog.otherPeople %></p>
-            <p><strong>Preceeding Action:</strong> <%= cueLog.preceedingAction %></p>
-          </div>
-        <% }) %>
-      </div>
-      <div class="submit-cue">
-        <% if (habit.isolateCue.length>1 && !habit.cue) { %>
-          <form action="/break-habits/<%= habit._id %>?_method=PATCH" method="POST">
-            <input type="text" placeholder="cue" name="cue">
-            <button>Submit my Cue!</button>
-          </form>
-        <% } %>
+      <div class="rewards-container">
+        <div class="rewards-btn">
+          <a href="/break-habits/<%= habit._id %>/possible-rewards/new">
+            <button>Track possible rewards</button>
+          </a>
+        </div>
+        <div class="rewards-body">
+          <% habit.possibleRewards.forEach(possibleReward => { %>
+            <div class="rewards">
+              <p><strong>Reward:</strong>
+                <%= possibleReward.reward %>
+              </p>
+              <p><strong>Notes:</strong>
+                <%= possibleReward.notes %>  
+              </p>
+            </div>
+          <% }) %>
+        </div>
+        <div class="submit-reward">
+          <% if (habit.possibleRewards.length>1 && !habit.reward) { %>
+            <form action="/break-habits/<%= habit._id %>?_method=PATCH" method="POST">
+              <input type="text" placeholder="reward" name="reward">
+              <button>Submit my Reward!</button>
+            </form>
+          <% } %>
+        </div>
       </div>
     </div>
-    <div class="rewards-container">
-      <div class="rewards-btn">
-        <a href="/break-habits/<%= habit._id %>/possible-rewards/new">
-          <button>Track possible rewards</button>
-        </a>
-      </div>
-      <div class="rewards-body">
-        <% habit.possibleRewards.forEach(possibleReward => { %>
-          <div class="rewards">
-            <p><strong>Reward:</strong>
-              <%= possibleReward.reward %>
-            </p>
-            <p><strong>Notes:</strong>
-              <%= possibleReward.notes %>  
-            </p>
-          </div>
-        <% }) %>
-      </div>
-      <div class="submit-reward">
-        <% if (habit.possibleRewards.length>1 && !habit.reward) { %>
-          <form action="/break-habits/<%= habit._id %>?_method=PATCH" method="POST">
-            <input type="text" placeholder="reward" name="reward">
-            <button>Submit my Reward!</button>
-          </form>
-        <% } %>
-      </div>
-    </div>
-  </div>
+  <% } %>
   <div class="habit-loop">
     <% if (habit.cue || habit.reward) { %>
       <h2>Your current habit loop</h2>

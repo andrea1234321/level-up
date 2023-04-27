@@ -1,0 +1,24 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/break-habits/edit.css">
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <div class="container">
+    <label>Cue: 
+      <input type="text" name="cue" value="<%= habit.cue %>" autocomplete="off" required >
+    </label>
+    <label class="old-routine">Old Routine: 
+      <p><%= habit.routine %></p>
+    </label>
+    <label>New Routine: 
+      <input type="text" name="newRoutine" autocomplete="off" value="<%= habit.newRoutine %>" required>
+    </label>
+    <label>Reward: 
+      <input type="text" name="reward" autocomplete="off" value="<%= habit.reward %>" required>
+    </label>
+    <button class="submit-btn">Submit edit</button>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
