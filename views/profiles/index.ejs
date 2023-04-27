@@ -4,9 +4,9 @@
 
 <main>
   <div class="container">
-  <% profiles.forEach(profile => { %>
-    <% if (userProfile.equals(profile._id)) { %>
-    <% } else { %>
+    <% profiles.forEach(profile => { %>
+      <% if (userProfile.equals(profile._id)) { %>
+      <% } else { %>
         <%if (userProfile.outgoingFriendRequests.includes(profile._id)) { %>
           <div class="profile-card">
             <img 
@@ -46,18 +46,18 @@
               <button>See Profile</button>
             </a>
           </div>
-        <%} else { %>
-        <form action="/profiles/<%= profile._id %>/requestFriend" method="POST">
-          <div class="profile-card">
-            <img 
-            src="<%= profile.avatar %>" 
-            alt="<%= profile.name %>'s avatar"
-            class="friend-img"
-            >
-            <h3><%= profile.name %></h3>
-            <button class="blue-btn">Send friend request</button>
-          </div>
-        </form>
+        <% } else { %>
+          <form action="/profiles/<%= profile._id %>/requestFriend" method="POST">
+            <div class="profile-card">
+              <img 
+              src="<%= profile.avatar %>" 
+              alt="<%= profile.name %>'s avatar"
+              class="friend-img"
+              >
+              <h3><%= profile.name %></h3>
+              <button class="blue-btn">Send friend request</button>
+            </div>
+          </form>
         <% } %>
       <% } %>
     <% }) %>

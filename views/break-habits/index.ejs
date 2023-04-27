@@ -7,9 +7,7 @@
     <div class="dropdown">
       <button class="dropdown-btn">?</button>
       <div class="dropdown-content">
-        <h1>
-          The Habit Loop
-        </h1>
+        <h1>The Habit Loop</h1>
         <p>Habits are easy to change once you know about the habit loop.</p>
         <div class="habit-loop">
           <img src="/images/HabitLoop.png" alt="habitloop">
@@ -31,11 +29,11 @@
   <h1><%= title %></h1>
   <div class="bad-habit-container">
     <% habits.forEach(habit => { %>
-      <a href="/break-habits/<%= habit._id %>">
-        <div class="bad-habit-content">
-      <%= habit.routine %> 
-      </a>
-    </div>
+      <div class="bad-habit-content">
+        <a href="/break-habits/<%= habit._id %>">
+        <button class="bad-habit-btn"><%= habit.routine %> </button>
+        </a>
+      </div>
     <% }) %>
   </div>
   <a href="/break-habits/new">

@@ -10,20 +10,18 @@
         <a href="/journals" id="journal-link" class=<%= nav === 'journals' ? 'active-journal' : '' %>>Journal</a>
         <a href="/break-habits" id="break-habit-link" class=<%= nav === 'break habit' ? 'active-habit' : '' %>>Break A Habit</a>
         <a href="/profiles" id="add-friend-link" class=<%= nav === 'profiles' ? 'active-profiles' : '' %>>Add Friends</a>
-        <% } %>
-      </div>
-      <div class="google">
-        <% if (user?.profile.avatar) { %>
-          <div class="logo-container">
-            <img src="/images/level-up-logo-white.png" alt="level-up-logo">
-          </div>
-        <div>
-          <img
-            src="<%= user.profile.avatar %>"
-            alt="<%= user.profile.name %> avatar"
-            class="profile-avatar"
-          />
+      <% } %>
+    </div>
+    <div class="google">
+      <% if (user?.profile.avatar) { %>
+        <div class="logo-container">
+          <img src="/images/level-up-logo-white.png" alt="level-up-logo">
         </div>
+        <img
+          src="<%= user.profile.avatar %>"
+          alt="<%= user.profile.name %> avatar"
+          class="profile-avatar"
+        />
       <% } %>
       <% if (user) { %>
         <a href="/auth/logout" class="right">

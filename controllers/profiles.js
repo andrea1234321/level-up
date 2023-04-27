@@ -20,7 +20,6 @@ function index(req, res) {
 }
 
 function requestFriend(req, res){
-  // console.log('work')
   Profile.findById(req.params.profileId)
   .then(friendProfile=> {
     Profile.findById(req.user.profile._id)
@@ -30,8 +29,6 @@ function requestFriend(req, res){
       friendProfile.incomingFriendRequests.push(userProfile)
       friendProfile.save()
       .then(()=> {
-        console.log(userProfile)
-        console.log(friendProfile)
         res.redirect('/profiles')
       })
       .catch(err=> {
@@ -51,7 +48,6 @@ function requestFriend(req, res){
 }
 
 function acceptFriend(req,res){
-  // console.log('working')
   Profile.findById(req.params.profileId)
   .then(friendProfile=> {
     Profile.findById(req.user.profile._id)
@@ -113,7 +109,6 @@ function show(req,res){
   Profile.findById(req.params.profileId)
   .populate('goals')
   .then(friendProfile=> {
-    console.log(friendProfile)
     res.render('profiles/show', {
       friendProfile: friendProfile,
       title: friendProfile.name,

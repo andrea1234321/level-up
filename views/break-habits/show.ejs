@@ -6,21 +6,21 @@
   <div class="dropdown-container">
     <div class="dropdown">
       <div class="dropdown-div">...</div>
-        <div class="dropdown-content">
-          <a href="/break-habits">
-            <button class="hover-btn">Back</button>
+      <div class="dropdown-content">
+        <a href="/break-habits">
+          <button class="hover-btn">Home Page</button>
+        </a>
+        <% if (habit.reward && habit.cue) { %>
+          <a href="/break-habits/<%= habit._id %>/cue-reward-show">
+            <button class="hover-btn">Details</button>
           </a>
-          <% if (habit.reward && habit.cue) { %>
-            <a href="/break-habits/<%= habit._id %>/cue-reward-show">
-              <button class="hover-btn">Details</button>
-            </a>
-            <a href="/break-habits/<%= habit._id %>/edit">
-              <button class="hover-btn">Edit</button>
-            </a>
-            <% } %>
-          <form action="/break-habits/<%= habit._id %>?_method=DELETE"method="POST">
-            <button class="hover-btn">Delete Habit</button>
-          </form>
+          <a href="/break-habits/<%= habit._id %>/edit">
+            <button class="hover-btn">Edit</button>
+          </a>
+        <% } %>
+        <form action="/break-habits/<%= habit._id %>?_method=DELETE"method="POST">
+          <button class="hover-btn">Delete Habit</button>
+        </form>
       </div>
     </div>
   </div>

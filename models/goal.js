@@ -16,7 +16,6 @@ const goalSchema = new Schema({
     return new Date()
   }},
   content: {type: String, required: true},
-  // completed: Boolean,
   checkIns: [checkInSchema],
   owner: { type: Schema.Types.ObjectId, ref: 'Profile' },
 }, {

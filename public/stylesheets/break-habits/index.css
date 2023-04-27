@@ -1,3 +1,6 @@
+h1{
+  margin-top: 0;
+}
 button{
   background-color: #75d0e7;
   color: #193540;
@@ -13,7 +16,7 @@ button:hover{
   flex-direction: column;
 }
 
-.bad-habit-content{
+.bad-habit-btn{
   margin: 10px;
   padding: 25px;
   background-color: rgba(117,208,231,0.3);

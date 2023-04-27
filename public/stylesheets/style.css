@@ -14,11 +14,12 @@ html {
 body {
   background-color: #ffffff;
   color: #1f4250;
-  /* Use a system font, if none are available use any found sans-sarif font */
-  font-family: system-ui, 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-family: sans-serif;
   margin: 0;
 }
-
+textarea, input{
+  font-family: sans-serif;
+}
 nav {
   background-color: #1f4250;
   display: flex;

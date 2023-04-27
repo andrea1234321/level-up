@@ -12,14 +12,10 @@ label{
 }
 label>:nth-child(1){
   margin-left: 40px;
-  padding: 5px;
+  padding: 7px;
 }
 .title-input{
   width: 250px;
-}
-
-textarea{
-  padding: 10px;
 }
 
 button{

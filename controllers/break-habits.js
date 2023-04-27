@@ -32,7 +32,7 @@ function create(req,res){
       profile.breakHabits.push(habit)
       profile.save()
       .then(()=> {
-        res.redirect('/break-habits')
+        res.redirect(`/break-habits/${habit._id}`)
       })
       .catch(err=> {
         console.log(err)

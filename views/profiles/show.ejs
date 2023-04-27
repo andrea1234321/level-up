@@ -11,7 +11,6 @@
           <th>Category</th>
           <th>Title</th>
           <th>Deadline</th>
-          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -20,9 +19,6 @@
            <td><%= goal.category %></td>
            <td><%= goal.title %></td>
            <td><%= goal.deadline.toISOString().slice(5, 10)%>-<%= goal.deadline.toISOString().slice(0, 4)%></td>
-           <td>
-            <button>Details</button>
-          </td>
          </tr>
         <% }) %>
       </tbody>
