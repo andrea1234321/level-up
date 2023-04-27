@@ -29,3 +29,6 @@ LevelUp allows you to set specific goals and check in on them regularly so that 
 
 ## Next Steps
 - [ ] Add a create new habit section, that shows step-by-step how to create a habit successfully
+- [ ] Break a habit section: Add a check-in section to track how often you are implementing your new habit loop
+- [ ] Journal Section: Create folders labeled by month that the journal entries will live in
+- [ ] Goals Section: Add a checkbox on the index page that will indicate the goal was completed and then move the goal to another page that only holds completed goals
