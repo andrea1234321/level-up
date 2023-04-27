@@ -7,31 +7,21 @@
     <table>
       <thead>
         <tr class="row-header">
-          <!-- <th></th> -->
           <th>Category</th>
           <th>Title</th>
           <th>Deadline</th>
-          <th></th>
           <th></th>
         </tr>
       </thead>
       <tbody>
         <% goals.forEach(goal => { %>
           <tr>
-            <!-- <td>
-              <input type="checkbox">
-            </td> -->
             <td><%= goal.category %></td>
             <td><%= goal.title %></td>
             <td><%= goal.deadline.toISOString().slice(5, 10)%>-<%= goal.deadline.toISOString().slice(0, 4)%></td>
             <td>
               <a href="/goals/<%= goal._id %>">
                 <button>Details</button>
-              </a>
-            </td>
-            <td>
-              <a href="/goals/<%= goal._id %>/checkIn/new">
-                <button>Check-In</button>
               </a>
             </td>
          </tr>

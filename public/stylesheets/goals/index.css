@@ -1,7 +1,4 @@
 .goals-container{
-  /* background-color: rgba(36,131,120,.3);
-  padding: 20px;
-  border-radius: 20px; */
   width: 95%;
   display: flex;
   justify-content: center;
@@ -9,16 +6,25 @@
 
 table{
   table-layout: fixed;
-  width: 95%;
+  width: 800px;
   border-collapse: collapse;
 }
 
 tr{
-  /* border-bottom: 1px solid #18323c; */
   text-align: center;
 }
-thead{
-  width: fit-content
+th{
+  width: fit-content;
+}
+th:nth-child(1){
+  width: 150px;
+}
+th:nth-child(3){
+  width: 150px;
+  margin-left: 25px;
+}
+th:nth-child(4){
+  width: 125px;
 }
 
 tbody tr:nth-child(odd){

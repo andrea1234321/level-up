@@ -22,6 +22,7 @@ LevelUp allows you to set specific goals and check in on them regularly so that 
 * MomentJS
 * Google OAuth
 * Fly.io
+* Animate.css
 
 ## Attributions 
 * Date Library: [MomentJS](https://momentjs.com/)
