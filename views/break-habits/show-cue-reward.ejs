@@ -1,0 +1,62 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/break-habits/show.css">
+<%- include('../partials/nav') %>
+
+<main>
+  <div class="dropdown-container">
+    <div class="dropdown">
+      <div class="dropdown-div">...</div>
+        <div class="dropdown-content">
+          <a href="/break-habits/<%= habit._id %>">
+            <button class="hover-btn">Back</button>
+          </a>
+      </div>
+    </div>
+  </div>
+  <h1><%= title %></h1>
+  <div class="rewards-cue-container">
+    <div class="cues-container">
+      <div class="cues-btn">
+        <h3>Cue Log</h3>
+      </div>
+      <div class="cues-body">
+        <% habit.isolateCue.forEach(cueLog => { %>
+          <div class="cues">
+            <p><strong>Location:</strong> <%= cueLog.location %></p>
+            <p><strong>Time:</strong> <%= cueLog.time %></p>
+            <p><strong>Emotional State:</strong> <%= cueLog.emotionalState %></p>
+            <p><strong>Who was around:</strong> <%= cueLog.otherPeople %></p>
+            <p><strong>Preceeding Action:</strong> <%= cueLog.preceedingAction %></p>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+    <div class="rewards-container">
+      <div class="rewards-btn">
+        <h3>Possible Rewards log</h3>
+      </div>
+      <div class="rewards-body">
+        <% habit.possibleRewards.forEach(possibleReward => { %>
+          <div class="rewards">
+            <p><strong>Reward:</strong>
+              <%= possibleReward.reward %>
+            </p>
+            <p><strong>Notes:</strong>
+              <%= possibleReward.notes %>  
+            </p>
+          </div>
+        <% }) %>
+      </div>
+      <div class="submit-reward">
+        <% if (habit.possibleRewards.length>1 && !habit.reward) { %>
+          <form action="/break-habits/<%= habit._id %>?_method=PATCH" method="POST">
+            <input type="text" placeholder="reward" name="reward">
+            <button>Submit my Reward!</button>
+          </form>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>

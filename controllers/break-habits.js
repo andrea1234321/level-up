@@ -155,6 +155,21 @@ function deleteBadHabit(req,res){
   })
 }
 
+function showCueReward(req,res){
+  BreakHabit.findById(req.params.breakHabitId)
+  .then(habit=> {
+    res.render('break-habits/show-cue-reward', {
+      title: 'Details',
+      nav: 'break habit',
+      habit: habit
+    })
+  })
+  .catch(err=> {
+    console.log(err)
+    res.redirect('/break-habit')
+  })
+}
+
 
 export{
   index,
@@ -166,5 +181,6 @@ export{
   newCueLog,
   createCueLog,
   update,
-  deleteBadHabit as delete
+  deleteBadHabit as delete,
+  showCueReward
 }

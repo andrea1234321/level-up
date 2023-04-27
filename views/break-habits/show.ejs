@@ -7,7 +7,9 @@
     <div class="dropdown">
       <div class="dropdown-div">...</div>
         <div class="dropdown-content">
-          <button class="hover-btn">Details</button>
+          <a href="/break-habits/<%= habit._id %>/cue-reward-show">
+            <button class="hover-btn">Details</button>
+          </a>
           <button class="hover-btn">Edit</button>
           <form action="/break-habits/<%= habit._id %>?_method=DELETE"method="POST">
             <button class="hover-btn">Delete Habit</button>
@@ -15,11 +17,6 @@
       </div>
     </div>
   </div>
-  <!-- <div class="delete">
-    <form action="/break-habits/<%# habit._id %>?_method=DELETE"method="POST">
-      <button>Delete Habit</button>
-    </form>
-  </div> -->
   <h1>Habit to stop: <%= title %></h1>
   <p class="instructions">Now that you have identified the routine, its time to figure out what your cue is and track the possible rewards</p>
   <div class="rewards-cue-container">
