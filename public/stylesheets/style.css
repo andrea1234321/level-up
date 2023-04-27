@@ -160,6 +160,9 @@ button:active{
   width: 500px;
   font-size: 17px;
 }
+.login-welcome, .login-date{
+  margin-bottom: 0;
+}
 .logout-btn{
   color: white;
   background-color: #1f4250;
