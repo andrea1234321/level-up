@@ -24,15 +24,9 @@
     ></div>
   <% } %>
   <% if (user) {%>
-    <h1>Create a SMART goal</h1>
-    <h3>Specific</h3>
-    <h3>Measurable</h3>
-    <h3>Attainable</h3>
-    <h3>Realistic</h3>
-    <h3>Time-bound</h3>
-    <a href="/goals/new">
-      <button class="create-goal-btn">Create a New Goal</button>
-    </a>
+    <h1 class="login-welcome">Welcome <%= user.profile.name %>!</h1>
+    <h3 class="login-date">Today is <%= new Date().toString().slice(0,10) %>, <%= new Date().toString().slice(11,15) %></h3>
+    <p class="login-message">A great day to make changes to your life</p>
   <% } %>
 </main>
 
