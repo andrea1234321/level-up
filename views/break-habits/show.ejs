@@ -3,30 +3,32 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <div class="dropdown-container">
-    <div class="dropdown">
-      <div class="dropdown-div">
-        <img class="edit-icon" src="/images/hamburger-menu-blue.png" alt="edit-icon">
-      </div>
-      <div class="dropdown-content">
-        <a href="/break-habits">
-          <button class="hover-btn">Home Page</button>
-        </a>
-        <% if (habit.reward && habit.cue) { %>
-          <a href="/break-habits/<%= habit._id %>/cue-reward-show">
-            <button class="hover-btn">Details</button>
+  <div class="header">
+    <h1 class="title">Habit to stop: <%= title %></h1>
+    <div class="dropdown-container">
+      <div class="dropdown">
+        <div class="dropdown-div">
+          <img class="menu-icon" src="/images/hamburger-menu-blue.png" alt="edit-icon">
+        </div>
+        <div class="dropdown-content">
+          <a href="/break-habits">
+            <button class="hover-btn">Home Page</button>
           </a>
-          <a href="/break-habits/<%= habit._id %>/edit">
-            <button class="hover-btn">Edit</button>
-          </a>
-        <% } %>
-        <form action="/break-habits/<%= habit._id %>?_method=DELETE"method="POST">
-          <button class="hover-btn">Delete Habit</button>
-        </form>
+          <% if (habit.reward && habit.cue) { %>
+            <a href="/break-habits/<%= habit._id %>/cue-reward-show">
+              <button class="hover-btn">Details</button>
+            </a>
+            <a href="/break-habits/<%= habit._id %>/edit">
+              <button class="hover-btn">Edit</button>
+            </a>
+          <% } %>
+          <form action="/break-habits/<%= habit._id %>?_method=DELETE"method="POST">
+            <button class="hover-btn">Delete Habit</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-  <h1>Habit to stop: <%= title %></h1>
   <% if (!habit.reward || !habit.cue) { %>
     <p class="instructions">Now that you have identified the routine, it's time for some experimenting. You may think you already know what the cue and reward of your habit are, but often this initial thought is wrong. Here you will take the steps to figure out your true cue and reward.</p>
     <p class="instructions">It's important that you update your cue log every time you do your bad habit. The goal is to compare the cues and figure out which one is causing you to do the habit. You will also have to experiment with reward options. See which reward truly satisfies your craving. Once you have at least two data structures for each to compare, you will be able to submit what your actual cue and reward are!</p>

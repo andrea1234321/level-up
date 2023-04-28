@@ -1,4 +1,4 @@
-h1{
+.title{
   margin-top: 0;
 }
 button{
@@ -28,27 +28,36 @@ a{
 }
 
 .dropdown-container{
-  width: 95%;
   display: flex;
+  padding-left: 35px;
+  justify-content: left;
 }
 
 .dropdown {
   position: relative;
+  display: inline-block;
 }
-
-.dropdown-btn {
-  padding: 5px 10px 5px 10px;
+.dropdown-div {
+  background-color: #75d0e7;
+  color: #264653;
+  border-radius: 5px;
   font-size: 16px;
-  border: none;
+  width: 35px;
+  height: 35px;
 }
-
+.info-icon{
+  height:35px;
+  width: 35px;
+  padding: 5px;
+}
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: rgb(255, 255, 255);
   min-width: 900px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 2px 40px rgba(0,0,0,0.5);
   z-index: 1;
+  right: 0;
 }
 .habit-loop-heading{
   margin-top: 20px;
@@ -83,6 +92,7 @@ a{
 .dropdown-content>h1{
   border: none;
 }
+
 ul>p{
   margin-bottom: 10px;
 }
@@ -90,4 +100,15 @@ p{
   max-width: 500px;
   margin: 0 auto;
   margin-bottom: 25px;
+}
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 21.440px;
+}
+.title{
+  margin-top: 10px;
+  margin-bottom: 0;
 }
