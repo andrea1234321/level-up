@@ -58,8 +58,6 @@ button{
   display: flex;
   padding-left: 35px;
   justify-content: left;
-  /* margin-right: 25px;
-  margin-top: -10px; */
 }
 
 .dropdown {

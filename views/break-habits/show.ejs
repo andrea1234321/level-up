@@ -53,7 +53,7 @@
         <div class="submit-cue">
           <% if (habit.isolateCue.length>1 && !habit.cue) { %>
             <form action="/break-habits/<%= habit._id %>?_method=PATCH" method="POST">
-              <input type="text" placeholder="cue" name="cue">
+              <input type="text" placeholder="cue" name="cue" autocomplete="off">
               <button>Submit my Cue!</button>
             </form>
           <% } %>
