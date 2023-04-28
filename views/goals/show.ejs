@@ -3,11 +3,13 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <div class="dropdown-container">
-    <div class="dropdown">
-      <div class="dropdown-div">
-        <img class="edit-icon" src="/images/hamburger-menu-white.png" alt="edit-icon">
-      </div>
+  <div class="header">
+    <h1 class="title"><%= goal.category %> Goal: <%= title %></h1>
+    <div class="dropdown-container">
+      <div class="dropdown">
+        <div class="dropdown-div">
+          <img class="menu-icon" src="/images/hamburger-menu-white.png" alt="menu-icon">
+        </div>
         <div class="dropdown-content">
           <a href="/goals/<%= goal._id %>/checkIn/new">
             <button class="hover-btn">Check-In</button>
@@ -16,13 +18,12 @@
             <button class="hover-btn">Edit Goal</button>
           </a>
           <form action="/goals/<%= goal._id %>/?_method=DELETE" method="POST">
-          <button class="hover-btn">Delete Goal</button>
-        </form>
+            <button class="hover-btn">Delete Goal</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-  <h2><%= goal.category %> Goal:</h2>
-  <h1><%= title %></h1>
   <p class="deadline">Deadline is on <%= goalDeadline%></p>
   <p class="goal-content-header">Details: </p>
   <p class="goal-content"><%= goal.content %></p>

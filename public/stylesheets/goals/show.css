@@ -5,13 +5,6 @@
   margin-right: 25px;
   margin-top: -10px;
  }
-h1{
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-h2{
-  margin-bottom: 5px;;
-}
 
 .deadline{
   margin-top: 5px;
@@ -63,10 +56,10 @@ button{
 }
 .dropdown-container{
   display: flex;
-  width: 100%;
-  justify-content: right;
-  margin-right: 25px;
-  margin-top: -10px;
+  padding-left: 35px;
+  justify-content: left;
+  /* margin-right: 25px;
+  margin-top: -10px; */
 }
 
 .dropdown {
@@ -82,7 +75,7 @@ button{
   width: 35px;
   height: 35px;
 }
-.edit-icon{
+.menu-icon{
   height:35px;
   width: 35px;
   padding: 5px;
@@ -109,4 +102,13 @@ button{
 .dropdown:hover .dropdown-content{
   display: block;
 }
-
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.title{
+  margin-bottom: 0;
+}

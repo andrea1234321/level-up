@@ -3,19 +3,24 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <div class="dropdown-container">
-    <div class="dropdown">
-      <div class="dropdown-div">
-        <img class="edit-icon" src="/images/edit-icon-blue.png" alt="edit-icon">
-      </div>
-      <div class="dropdown-content">
-        <a href="/break-habits/<%= habit._id %>">
-          <button class="hover-btn">Back</button>
-        </a>
+  <div class="header">
+    <h1 class="title"><%= title %></h1>
+    <div class="dropdown-container">
+      <div class="dropdown">
+        <div class="dropdown-div">
+          <img class="menu-icon" src="/images/hamburger-menu-blue.png" alt="edit-icon">
+        </div>
+        <div class="dropdown-content">
+          <a href="/break-habits/<%= habit._id %>">
+            <button class="hover-btn">Back</button>
+          </a>
+          <a href="/break-habits">
+            <button class="hover-btn">Home Page</button>
+          </a>
+        </div>
       </div>
     </div>
   </div>
-  <h1><%= title %></h1>
   <div class="rewards-cue-container">
     <div class="cues-container">
       <div class="cues-btn">
