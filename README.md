@@ -11,9 +11,10 @@ This quote is the inspiration behind LevelUp. When I first heard this quote, I f
 LevelUp allows you to set specific goals and check in on them regularly so that you can constantly see how you're progressing, a key factor in achieving goals. LevelUp also has a feature to help you break bad habits using the teachings from Charles Duhigg's "The Power Of Habit".
 
 ## Technology Implemented
+* EJS
 * JavaScript
 * CSS
-* EJS
+* Dockerfile
 * Mongoose
 * MongoDB
 * Node.js
